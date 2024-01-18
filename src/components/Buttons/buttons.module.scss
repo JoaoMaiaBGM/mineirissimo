@@ -1,0 +1,100 @@
+@import "styles/partials/colors";
+
+.button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+
+  border-radius: 30px;
+  border: solid 1px transparent;
+
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+
+  gap: 10px;
+}
+
+.primaryButton {
+  background-color: $color--primary;
+  color: $color--white;
+
+  border: solid 1.5px $color--primary;
+}
+
+.primaryButton:hover {
+  background-color: $color--primary-light;
+  color: $color--black;
+}
+
+.secondaryButton {
+  background-color: inherit;
+
+  border: solid 1px $color--white;
+
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 15px;
+  line-height: 1.8rem;
+}
+
+.secondaryButton:hover {
+  background-color: $color--primary;
+  border: none;
+}
+
+.icon {
+  font-size: 20px;
+}
+
+.link {
+  text-decoration: none;
+}
+
+// Size classes
+.buttonLarge {
+  width: 220px;
+  height: 50px;
+}
+
+.buttonMedium {
+  width: 195px;
+  height: 40px;
+
+  padding: 12px 24px;
+}
+
+.buttonSmall {
+  width: 175px;
+  height: 40px;
+  padding: 12px 12px;
+}
+
+// Scroll to top button
+
+.scrollToTopButtonContainer {
+  bottom: 20px;
+  right: 40px;
+
+  position: fixed;
+
+  cursor: pointer;
+  z-index: 10;
+}
+
+.backToTopButton {
+  width: 50px;
+  height: 50px;
+
+  background-color: $color--primary;
+
+  border: none;
+  border-radius: 50%;
+}
+
+.arrowUp {
+  font-size: 30px;
+  font-weight: 800px;
+  color: $color--white;
+}
