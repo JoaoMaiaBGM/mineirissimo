@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./footer.module.scss";
 
 import {
@@ -20,13 +21,13 @@ export function Footer() {
           </header>
           <ul className={styles.socialLinksList}>
             <li className={styles.sociaLlink}>
-              <a
+              <Link
                 target="_blank"
                 href="http://instagram.com/mineirissimo.recife"
                 rel="noopener noreferrer"
               >
                 <InstagramFeed />
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
@@ -35,10 +36,12 @@ export function Footer() {
           <h5 className={styles.contentTitle}>Informações</h5>
           <ul className={styles.list}>
             <li className={styles.item}>
-              <a href="/politicas_de_privacidade">Políticas de privacidade</a>
+              <Link href="/politicas_de_privacidade">
+                Políticas de privacidade
+              </Link>
             </li>
             <li className={styles.item}>
-              <a href="/termos_e_condicoes">Termos e condições</a>
+              <Link href="/termos_e_condicoes">Termos e condições</Link>
             </li>
           </ul>
         </div>
@@ -52,14 +55,14 @@ export function Footer() {
             </li>
 
             <li className={styles.item}>
-              <a
+              <Link
                 href="mailto:mineirissimoartesanal@gmail.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <IoMailOutline />
                 mineirissimoartesanal@gmail.com
-              </a>
+              </Link>
             </li>
 
             <li className={styles.item}>Telefone: (81)9.9627-2423</li>

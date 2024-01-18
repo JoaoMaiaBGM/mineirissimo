@@ -106,9 +106,9 @@ export function _TermsAndConditions() {
         Portanto, é recomendável revisar esta página periodicamente para
         verificar quaisquer alterações. Iremos notificá-lo de quaisquer
         alterações, publicando a nova{" "}
-        <a className={styles.link} href="/politicas_de_privacidade">
+        <Link className={styles.link} href="/politicas_de_privacidade">
           Política de Privacidade
-        </a>{" "}
+        </Link>{" "}
         {""}
         nesta página.
       </p>
@@ -116,15 +116,14 @@ export function _TermsAndConditions() {
       <p className={styles.paragraph}>
         Se tiver alguma pergunta ou sugestão sobre nossa Política de
         Privacidade, não deixe de entrar em contato através do email{" "}
-        <a
+        <Link
           className={styles.link}
           href="mailto:mineirissimoartesanal@gmail.com"
           target="_blank"
           rel="noopener"
         >
           mineirissimoartesanal@gmail.com
-        </a>
-        .
+        </Link>
       </p>
     </div>
   );

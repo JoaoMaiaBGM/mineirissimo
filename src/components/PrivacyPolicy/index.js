@@ -1,3 +1,4 @@
+import Link from "next/link";
 import styles from "./privacyPolicy.module.scss";
 
 export function _PrivacyPolicy() {
@@ -25,9 +26,9 @@ export function _PrivacyPolicy() {
       <p className={styles.paragraph}>
         Os termos usados nesta Política de Privacidade têm os mesmos
         significados que em nossos{" "}
-        <a className={styles.link} href="/termos_e_condicoes">
+        <Link className={styles.link} href="/termos_e_condicoes">
           Termos e Condições
-        </a>
+        </Link>
         , que podem ser acessados na página da Mineiríssimo, a menos que
         definido de outra forma nesta Política de Privacidade.
       </p>
@@ -131,14 +132,14 @@ export function _PrivacyPolicy() {
       <p className={styles.paragraph}>
         Se tiver alguma pergunta ou sugestão sobre nossa Política de
         Privacidade, não deixe de entrar em contato através do email{" "}
-        <a
+        <Link
           className={styles.link}
           href="mailto:mineirissimoartesanal@gmail.com"
           target="_blank"
           rel="noopener"
         >
           mineirissimoartesanal@gmail.com
-        </a>
+        </Link>
         .
       </p>
     </div>
