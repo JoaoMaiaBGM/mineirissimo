@@ -1,5 +1,3 @@
-import PropTypes from "prop-types";
-
 import styles from "./header.module.scss";
 
 import capitalize from "utils/capitalize";
@@ -21,8 +19,3 @@ export function BaseHeader({ children, size = "large", dark = "inactive" }) {
     </div>
   );
 }
-
-BaseHeader.propTypes = {
-  size: PropTypes.oneOf(["small", "medium", "large"]),
-  dark: PropTypes.oneOf(["active", "inactive"]),
-};
