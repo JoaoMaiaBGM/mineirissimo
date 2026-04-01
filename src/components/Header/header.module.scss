@@ -1,4 +1,4 @@
-@import "../../styles/partials/_colors.scss";
+@use "../../styles/partials/colors" as *;
 
 @keyframes fadeIn {
   from {
