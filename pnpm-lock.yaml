@@ -26,6 +26,9 @@ importers:
       framer-motion:
         specifier: ^10.16.5
         version: 10.18.0(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
+      imagekitio-next:
+        specifier: ^1.0.1
+        version: 1.0.1(next@13.2.4(@babel/core@7.29.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.98.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0)
       next:
         specifier: 13.2.4
         version: 13.2.4(@babel/core@7.29.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.98.0)
@@ -1729,6 +1732,19 @@ packages:
   ignore@5.3.2:
     resolution: {integrity: sha512-hsBTNUqQTDwkWtcdYI2i06Y/nUBEsNEDJKjWdigLvegy8kDuJAS8uRlpkkcQpyEXL0Z/pjDy5HBmMjRCJ2gq+g==}
     engines: {node: '>= 4'}
+
+  imagekit-javascript@3.1.0:
+    resolution: {integrity: sha512-56YmmOg6vKarIg4A41E9T08qQ2ri8862AYU/Ykhrbr9Cd8i6BIeKkroR16cmsNYFOIoLk35/O7b8o7I8DoyGaQ==}
+    deprecated: Please use @imagekit/javascript
+
+  imagekitio-next@1.0.1:
+    resolution: {integrity: sha512-rUubuWG7EGMj14hD3sNBQrddh9wbLLIuyebmOaQTSV3GlKsMbbbBKD819zvnEf4HA/rhzCZY+1rKBh4ZxrimyA==}
+    engines: {node: '>=12'}
+    deprecated: Please use @imagekit/next
+    peerDependencies:
+      next: ^12 || ^13 || ^14 || ^15
+      react: ^16.13.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.13.1 || ^17.0.0 || ^18.0.0 || ^19.0.0
 
   immutable@5.1.5:
     resolution: {integrity: sha512-t7xcm2siw+hlUM68I+UEOK+z84RzmN59as9DZ7P1l0994DKUWV7UXBMQZVxaoMSRQ+PBZbHCOoBt7a2wxOMt+A==}
@@ -4135,7 +4151,7 @@ snapshots:
       eslint: 8.40.0
       eslint-import-resolver-node: 0.3.9
       eslint-import-resolver-typescript: 3.10.1(eslint-plugin-import@2.32.0(eslint@8.40.0))(eslint@8.40.0)
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.40.0)(typescript@6.0.2))(eslint-import-resolver-typescript@3.10.1)(eslint@8.40.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.40.0)(typescript@6.0.2))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.40.0))(eslint@8.40.0))(eslint@8.40.0)
       eslint-plugin-jsx-a11y: 6.10.2(eslint@8.40.0)
       eslint-plugin-react: 7.37.5(eslint@8.40.0)
       eslint-plugin-react-hooks: 4.6.2(eslint@8.40.0)
@@ -4165,7 +4181,7 @@ snapshots:
       tinyglobby: 0.2.15
       unrs-resolver: 1.11.1
     optionalDependencies:
-      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.40.0)(typescript@6.0.2))(eslint-import-resolver-typescript@3.10.1)(eslint@8.40.0)
+      eslint-plugin-import: 2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.40.0)(typescript@6.0.2))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.40.0))(eslint@8.40.0))(eslint@8.40.0)
     transitivePeerDependencies:
       - supports-color
 
@@ -4180,7 +4196,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.40.0)(typescript@6.0.2))(eslint-import-resolver-typescript@3.10.1)(eslint@8.40.0):
+  eslint-plugin-import@2.32.0(@typescript-eslint/parser@5.62.0(eslint@8.40.0)(typescript@6.0.2))(eslint-import-resolver-typescript@3.10.1(eslint-plugin-import@2.32.0(eslint@8.40.0))(eslint@8.40.0))(eslint@8.40.0):
     dependencies:
       '@rtsao/scc': 1.1.0
       array-includes: 3.1.9
@@ -4497,6 +4513,15 @@ snapshots:
       function-bind: 1.1.2
 
   ignore@5.3.2: {}
+
+  imagekit-javascript@3.1.0: {}
+
+  imagekitio-next@1.0.1(next@13.2.4(@babel/core@7.29.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.98.0))(react-dom@18.2.0(react@18.2.0))(react@18.2.0):
+    dependencies:
+      imagekit-javascript: 3.1.0
+      next: 13.2.4(@babel/core@7.29.0)(react-dom@18.2.0(react@18.2.0))(react@18.2.0)(sass@1.98.0)
+      react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
 
   immutable@5.1.5: {}
 
