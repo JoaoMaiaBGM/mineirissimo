@@ -16,10 +16,10 @@
     "eslint-config-next": "13.4.1",
     "framer-motion": "^10.16.5",
     "imagekitio-next": "^1.0.1",
-    "next": "13.2.4",
+    "next": "16.2.2",
     "nookies": "^2.5.2",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
     "react-icons": "^4.11.0",
     "swiper": "^11.0.2"
   },
