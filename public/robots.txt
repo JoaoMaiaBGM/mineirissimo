@@ -1,0 +1,18 @@
+# Link previews (Open Graph) — evitar bloqueio por regras genéricas
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Facebot
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slackbot
+Allow: /
+
+User-agent: *
+Allow: /
