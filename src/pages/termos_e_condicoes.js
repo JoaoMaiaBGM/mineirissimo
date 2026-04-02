@@ -1,20 +1,15 @@
-import Head from "next/head";
-
 import { Header } from "components/Header";
+import { Seo } from "components/Seo";
 import { _TermsAndConditions } from "components/TermsAndConditions";
 
 export default function TermsAndConditions() {
   return (
     <>
-      <Head>
-        <title>Mineiríssimo</title>
-        <meta
-          name="description"
-          content="Page of terms and conditions of the Mineiríssimo brazilian cheese bread store"
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicons/logo_nova.ico" />
-      </Head>
+      <Seo
+        title="Termos e condições | Mineiríssimo"
+        description="Termos e condições de uso do site Mineiríssimo."
+        canonicalPath="/termos_e_condicoes"
+      />
       <main>
         <Header dark={"active"} size={"large"} />
         <_TermsAndConditions />
