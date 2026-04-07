@@ -1,5 +1,5 @@
-import "bootstrap/scss/bootstrap-reboot.scss";
 import "bootstrap/scss/bootstrap-grid.scss";
+import "styles/site.css";
 import "styles/globals.scss";
 
 export default function App({ Component, pageProps }) {
