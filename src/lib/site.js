@@ -1,13 +1,17 @@
 export const SITE_NAME = "Mineiríssimo";
 
-/** Fallback when `NEXT_PUBLIC_OG_IMAGE_URL` (ex.: ImageKit) não está definida. */
+/** Fallback local quando não há `ogImage` no DatoCMS (ex.: outras páginas ou CMS indisponível). */
 export const DEFAULT_OG_IMAGE_PATH = "/og-image.png";
 
-/** URL completa da og-image (ImageKit/CDN) ou caminho local; usado em `Seo`. */
 export function getDefaultOgImage() {
-  const fromCms = process.env.NEXT_PUBLIC_OG_IMAGE_URL?.trim();
-  if (fromCms) return fromCms;
   return DEFAULT_OG_IMAGE_PATH;
+}
+
+/** Ordem: asset Dato (`public.ogImage`, URL absoluta) → `DEFAULT_OG_IMAGE_PATH`. */
+export function resolveOgImageUrl(datoImageAsset) {
+  const url = datoImageAsset?.url?.trim();
+  if (url) return url;
+  return getDefaultOgImage();
 }
 
 export function getSiteUrl() {

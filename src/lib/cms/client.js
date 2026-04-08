@@ -13,6 +13,7 @@ export async function cmsQuery(query, { variables, preview = false } = {}) {
     return await executeQuery(query, {
       token,
       environment,
+      includeDrafts: preview,
       variables,
     });
   } catch (err) {

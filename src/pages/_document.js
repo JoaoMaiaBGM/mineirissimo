@@ -1,5 +1,4 @@
-import { Html, Head, Main, NextScript } from 'next/document';
-import { ImageKitProvider } from 'imagekitio-next';
+import { Head, Html, Main, NextScript } from 'next/document';
 
 export default function Document() {
   return (
@@ -15,10 +14,8 @@ export default function Document() {
         />
       </Head>
       <body>
-        <ImageKitProvider urlEndpoint={process.env.NEXT_PUBLIC_IMAGEKIT_URL_ENDPOINT}>
-          <Main />
-          <NextScript />
-        </ImageKitProvider>
+        <Main />
+        <NextScript />
       </body>
     </Html>
   );
