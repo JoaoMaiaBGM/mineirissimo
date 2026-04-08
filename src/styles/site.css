@@ -138,7 +138,7 @@
     margin-bottom: 0.5em;
   }
   h1 {
-    font-size: clamp(32px, 8vw, 48px);
+    font-size: clamp(40px, 8vw, 64px);
   }
   h2 {
     font-size: clamp(28px, 6vw, 36px);
