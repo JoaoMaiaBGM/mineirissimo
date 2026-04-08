@@ -1,11 +1,3 @@
-function requiredEnv(name) {
-  const value = process.env[name];
-  if (!value || !String(value).trim()) {
-    throw new Error(`[DatoCMS] Missing required env var: ${name}`);
-  }
-  return String(value).trim();
-}
-
 export function getDatoCdnConfig({ preview = false } = {}) {
   const token = preview
     ? process.env.NEXT_DATOCMS_PREVIEW_API_TOKEN?.trim()
@@ -17,9 +9,11 @@ export function getDatoCdnConfig({ preview = false } = {}) {
     );
   }
 
+  const environment = process.env.NEXT_DATOCMS_ENVIRONMENT?.trim();
+
   return {
     token,
-    environment: process.env.NEXT_DATOCMS_ENVIRONMENT?.trim() || 'main',
+    ...(environment ? { environment } : {}),
   };
 }
 

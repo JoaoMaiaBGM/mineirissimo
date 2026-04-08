@@ -4,19 +4,25 @@ import {
   SITE_NAME,
   absoluteAssetUrl,
   absolutePageUrl,
-  getDefaultOgImage,
+  resolveOgImageUrl,
 } from "lib/site";
 
+/**
+ * @param {string} [imagePath] — URL absoluta ou path (ex. `/og-image.png`). Só use para override explícito.
+ * @param {{ url?: string } | null} [ogImageFromCms] — File field do Dato (`public.ogImage`, etc.).
+ */
 export function Seo({
   title,
   description,
   canonicalPath,
-  imagePath = getDefaultOgImage(),
+  imagePath,
+  ogImageFromCms,
 }) {
   const pageUrl = absolutePageUrl(canonicalPath);
-  const imageUrl = /^https?:\/\//i.test(imagePath)
-    ? imagePath
-    : absoluteAssetUrl(imagePath);
+  const ogPath = imagePath ?? resolveOgImageUrl(ogImageFromCms);
+  const imageUrl = /^https?:\/\//i.test(ogPath)
+    ? ogPath
+    : absoluteAssetUrl(ogPath);
 
   return (
     <Head>
