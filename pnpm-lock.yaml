@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@datocms/cda-client':
+        specifier: ^0.2.10
+        version: 0.2.10
       '@types/bootstrap':
         specifier: ^5.2.6
         version: 5.2.10
@@ -139,6 +142,9 @@ packages:
   '@babel/types@7.29.0':
     resolution: {integrity: sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A==}
     engines: {node: '>=6.9.0'}
+
+  '@datocms/cda-client@0.2.10':
+    resolution: {integrity: sha512-uj5M4t0ifwlxBRFdgqnt1Sb4A8RNkv1e6sYa6gP6Bh+oGQwhtnGnvyNazA4KpLhqrO2UAw3dbKB5WltcB5JeAg==}
 
   '@emnapi/core@1.9.1':
     resolution: {integrity: sha512-mukuNALVsoix/w1BJwFzwXBN/dHeejQtuVzcDsfOEsdpCumXb/E9j8w11h5S54tT1xhifGfbbSm/ICrObRb3KA==}
@@ -2303,6 +2309,12 @@ snapshots:
     dependencies:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.28.5
+
+  '@datocms/cda-client@0.2.10':
+    dependencies:
+      '@0no-co/graphql.web': 1.2.0
+    transitivePeerDependencies:
+      - graphql
 
   '@emnapi/core@1.9.1':
     dependencies:

@@ -1,13 +1,8 @@
-import React from 'react';
 import Image from 'next/image';
 
 import heroImage from '../../assets/images/hero.jpg';
-import { PrimaryButton } from 'components/Buttons';
-import { Smoke } from 'components/Smoke';
 
-import { BsWhatsapp } from 'react-icons/bs';
 
-import styles from './hero.module.scss';
 
 export function Hero() {
   return (
