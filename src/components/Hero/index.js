@@ -1,13 +1,18 @@
 import Image from 'next/image';
+import { usePublicAssets } from 'lib/cms/usePublicAssets';
+import heroFallback from '../../assets/images/hero.jpg';
 
-import heroImage from '../../assets/images/hero.jpg';
+export function Hero({ heroImage }) {
+  const { data } = usePublicAssets();
+  const cmsHeroImage = data?.heroImage ?? null;
+  const resolvedHeroImage = heroImage ?? cmsHeroImage;
+  const src = resolvedHeroImage?.url || heroFallback;
 
-export function Hero() {
   return (
     <section className="relative w-full h-[90svh] flex flex-col items-center justify-center overflow-hidden">
       <Image
-        src={heroImage}
-        alt="Uma cesta de pão de queijo"
+        src={src}
+        alt={resolvedHeroImage?.alt || 'Uma cesta de pão de queijo'}
         width={1000}
         height={1000}
         className="relative w-full h-full object-cover"
