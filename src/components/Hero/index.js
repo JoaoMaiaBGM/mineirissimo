@@ -2,8 +2,6 @@ import Image from 'next/image';
 
 import heroImage from '../../assets/images/hero.jpg';
 
-
-
 export function Hero() {
   return (
     <section className="relative w-full h-[90svh] flex flex-col items-center justify-center overflow-hidden">
