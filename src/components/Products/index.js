@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Swiper } from "swiper/react";
 
-import ilustrationProducts from "../../assets/images/ilustration-products.png";
 import { ProductsCards } from "components/ProductsCard";
 import { AnimatedElement } from "utils/animations";
+import ilustrationProducts from "../../assets/images/ilustration-products.png";
 
 import styles from "./products.module.scss";
 
@@ -11,7 +11,7 @@ export function Products() {
   return (
     <AnimatedElement
       element="section"
-      className={styles.products}
+      className={`${styles.products} section-p`}
       id="produtos"
     >
       <h4 className={styles.title}>Produtos</h4>

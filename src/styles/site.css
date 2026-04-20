@@ -237,6 +237,80 @@
     }
   }
 
+  @layer utilities {
+    .section-pt {
+      @apply pt-14;
+
+      @media (min-width: theme("screens.lg")) {
+        @apply pt-16;
+      }
+
+      @media (min-width: theme("screens.xl")) {
+        @apply pt-20;
+      }
+    }
+
+    .section-mt {
+      @apply mt-14;
+
+      @media (min-width: theme("screens.lg")) {
+        @apply mt-16;
+      }
+
+      @media (min-width: theme("screens.xl")) {
+        @apply mt-20;
+      }
+    }
+
+    .section-mb {
+      @apply mb-14;
+
+      @media (min-width: theme("screens.lg")) {
+        @apply mb-16;
+      }
+
+      @media (min-width: theme("screens.xl")) {
+        @apply mb-20;
+      }
+    }
+
+    .section-pb {
+      @apply pb-14;
+
+      @media (min-width: theme("screens.lg")) {
+        @apply pb-16;
+      }
+
+      @media (min-width: theme("screens.xl")) {
+        @apply pb-20;
+      }
+    }
+
+    .section-m {
+      @apply my-14;
+
+      @media (min-width: theme("screens.lg")) {
+        @apply my-16;
+      }
+
+      @media (min-width: theme("screens.xl")) {
+        @apply my-20;
+      }
+    }
+
+    .section-p {
+      @apply py-14;
+
+      @media (min-width: theme("screens.lg")) {
+        @apply py-16;
+      }
+
+      @media (min-width: theme("screens.xl")) {
+        @apply py-20;
+      }
+    }
+  }
+
   /* Button Styles */
   .btn-primary {
     @apply bg-primary text-primary-foreground px-6 py-3 rounded transition-all duration-200 font-semibold;
