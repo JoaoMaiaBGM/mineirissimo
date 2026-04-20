@@ -1,41 +1,24 @@
-import React from 'react';
 import Image from 'next/image';
 
-import ilustrationHero from '../../assets/images/ilustration-hero.png';
-import { PrimaryButton } from 'components/Buttons';
-import { Smoke } from 'components/Smoke';
-
-import { BsWhatsapp } from 'react-icons/bs';
-
-import styles from './hero.module.scss';
+import heroImage from '../../assets/images/hero.jpg';
 
 export function Hero() {
   return (
-    <section className={styles.hero}>
-      <div className={styles.container}>
-        <div className={styles.content}>
-          <h4 className={styles.title}>boas-vindas ao mineiríssimo</h4>
-          <h1 className={styles.headline}>O legítimo sabor do pão de queijo</h1>
-          <p className={styles.paragraph}>
-            Há mais de 10 anos fabricando o autêntico pão de queijo mineiro. Venha conhecer, você
-            não vai se arrepender!
-          </p>
-          <a href={'/#contato'}>
-            <PrimaryButton className={styles.button} size="large">
-              <BsWhatsapp />
-              faça se pedido
-            </PrimaryButton>
-          </a>
-        </div>
-        <div className={styles.imageContainer}>
-          <Image
-            className={styles.image}
-            src={ilustrationHero}
-            alt="Imagem de uma sexta com pães de queijo"
-            priority={true}
-          />
-          <Smoke />
-        </div>
+    <section className="relative w-full h-[90svh] flex flex-col items-center justify-center overflow-hidden">
+      <Image
+        src={heroImage}
+        alt="Uma cesta de pão de queijo"
+        width={1000}
+        height={1000}
+        className="relative w-full h-full object-cover"
+      />
+      <div className="absolute max-w-2xl rounded-4xl text-center px-4 flex flex-col items-center justify-center md:px-16 md:backdrop-blur-[2px]">
+        <h1 className="text-primary mb-4 text-shadow-[0_0_6px_rgba(255,255,255,0.9)] md:text-shadow-none">
+          O legítimo sabor <br />
+          do pão de queijo
+        </h1>
+        <p className="text-base text-foreground mb-8 text-shadow-[0_0_4px_rgba(255,255,255,0.6)]">Produtos artesanais sem glúten desde 2010</p>
+        <button className="btn-primary">Fazer Pedido Agora</button>
       </div>
     </section>
   );
