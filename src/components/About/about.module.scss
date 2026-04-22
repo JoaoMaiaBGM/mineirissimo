@@ -1,9 +1,7 @@
-@use "../../styles/partials/colors" as *;
-
 .about {
   width: 100%;
 
-  background-color: $color--gray-1;
+  background-color: var(--mine-gray-1);
 
   text-align: center;
 
@@ -19,7 +17,7 @@
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 1.3px;
-  color: $color--primary;
+  color: var(--primary);
 
   margin: 0 auto 20px auto;
 }
@@ -30,7 +28,7 @@
 
   font-size: 44px;
   font-weight: 700;
-  color: $color--gray-5;
+  color: var(--mine-gray-5);
 }
 
 .container {
@@ -69,7 +67,7 @@
 .paragraph {
   font-weight: 400;
   font-size: 20px;
-  color: $color--gray-5;
+  color: var(--mine-gray-5);
 
   text-align: justify;
 

@@ -1,9 +1,7 @@
-@use "../../styles/partials/colors" as *;
-
 .footer {
   width: 100%;
 
-  background-color: $color--primary-light;
+  background-color: var(--primary-light, var(--accent));
 
   text-align: center;
 
@@ -44,7 +42,7 @@
 }
 
 .contentTitle {
-  color: $color--white;
+  color: var(--mine-white);
   font-size: 24px;
   font-weight: 400;
 
@@ -72,11 +70,11 @@
 }
 
 .socialLink {
-  color: $color--white;
+  color: var(--mine-white);
 }
 
 .logoInstagram {
-  color: $color--white;
+  color: var(--mine-white);
   font-size: 36px;
 }
 
@@ -97,7 +95,7 @@
   align-items: center;
   text-wrap: balance;
 
-  color: $color--white;
+  color: var(--mine-white);
   font-size: 17px;
 
   gap: 8px;
@@ -107,7 +105,7 @@
   display: flex;
   align-items: center;
 
-  color: $color--white;
+  color: var(--mine-white);
 
   gap: 8px;
 }
@@ -119,7 +117,7 @@
   align-items: center;
 
   margin: 0 auto;
-  border-top: 1px solid $color--gray-2;
+  border-top: 1px solid var(--mine-gray-2);
 
-  color: $color--white;
+  color: var(--mine-white);
 }
