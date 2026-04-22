@@ -1,3 +1,4 @@
+@config "../../tailwind.config.js";
 @import 'tailwindcss';
 @import 'tw-animate-css';
 
@@ -46,8 +47,10 @@
   /* Mineiríssimo Brand Colors */
   --primary: oklab(0.39 0.11 0.05); /* Bordô Profundo */
   --primary-dark: oklab(0.32 0.1 0.04); /* Bordô Profundo Escuro */
+  --primary-light: #c7776b;
   --primary-foreground: oklch(0.99 0 0); /* Branco Natural */
   --secondary: oklch(0.64 0.18 45); /* Laranja Vibrante */
+  --secondary-dark: #3d4657;
   --secondary-foreground: oklch(0.99 0 0); /* Branco Natural */
   --accent: oklch(0.65 0.12 65); /* Dourado Quente */
   --accent-foreground: oklch(0.42 0.18 10); /* Bordô Profundo */
@@ -78,6 +81,18 @@
   --sidebar-accent-foreground: oklch(0.42 0.18 10); /* Bordô Profundo */
   --sidebar-border: oklch(0.65 0.12 65); /* Dourado Quente */
   --sidebar-ring: oklch(0.65 0.12 65); /* Dourado Quente */
+
+  /* Legacy palette tokens (used by older SCSS modules) */
+  --mine-black: #000000;
+  --mine-white: #ffffff;
+  --mine-blue-dark: #22262a;
+  --mine-gray-1: #fffaf0;
+  --mine-gray-2: #e8ddeb;
+  --mine-gray-3: #adb5bd;
+  --mine-gray-4: #868e96;
+  --mine-gray-5: #484f56;
+  --mine-gray-6: #cdced9;
+  --mine-shadow: #00000014;
 }
 
 .dark {
@@ -125,51 +140,6 @@
     font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.6;
-  }
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    font-family: 'Playfair Display', serif;
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 0.5em;
-  }
-  h1 {
-    font-size: clamp(40px, 8vw, 64px);
-  }
-  h2 {
-    font-size: clamp(28px, 6vw, 36px);
-    font-weight: 600;
-  }
-  h3 {
-    font-size: clamp(24px, 5vw, 28px);
-    font-weight: 600;
-  }
-  h4 {
-    font-size: 20px;
-    font-weight: 600;
-  }
-  h5 {
-    font-size: 18px;
-    font-weight: 600;
-  }
-  h6 {
-    font-size: 16px;
-    font-weight: 600;
-  }
-  p {
-    margin-bottom: 1em;
-  }
-  a {
-    color: var(--primary);
-    text-decoration: none;
-    transition: color 200ms ease-in-out;
-  }
-  a:hover {
-    color: var(--secondary);
   }
   button:not(:disabled),
   [role='button']:not([aria-disabled='true']),

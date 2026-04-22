@@ -14,7 +14,7 @@ export function Products() {
       className={`${styles.products} section-p`}
       id="produtos"
     >
-      <h4 className={styles.title}>Produtos</h4>
+      <h4 className={styles.title}>Nossos Produtos</h4>
       <h1 className={styles.headline}>
         Apresentamos alguns de nosso produtos mais vendidos
       </h1>

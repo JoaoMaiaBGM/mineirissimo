@@ -1,9 +1,7 @@
-@use "../../styles/partials/colors" as *;
-
 .innovations {
   width: 100%;
 
-  background-color: $color--gray-1;
+  background-color: var(--mine-gray-1);
 
   text-align: center;
 
@@ -30,7 +28,7 @@
   font-size: 16px;
   font-weight: 700;
   letter-spacing: 1.3px;
-  color: $color--primary;
+  color: var(--primary);
 }
 
 .headline {
@@ -40,7 +38,7 @@
 
   font-size: 45px;
   font-weight: 700;
-  color: $color--gray-5;
+  color: var(--mine-gray-5);
 
   margin-bottom: 32px;
 }
@@ -50,7 +48,7 @@
 
   font-weight: 400;
   font-size: 20px;
-  color: $color--gray-5;
+  color: var(--mine-gray-5);
 
   text-align: center;
 
@@ -103,20 +101,20 @@
   font-weight: 700;
   text-align: center;
 
-  color: $color--primary;
+  color: var(--primary);
 
   animation: blink 1.5s infinite;
 }
 
 @keyframes blink {
   0% {
-    color: $color--primary;
+    color: var(--primary);
   }
   50% {
-    color: $color--white;
+    color: var(--mine-white);
   }
   100% {
-    color: $color--primary;
+    color: var(--primary);
   }
 }
 
@@ -131,6 +129,6 @@
 
 .informationContent > span {
   font-weight: 700;
-  color: $color--primary;
+  color: var(--primary);
   font-size: 28px;
 }

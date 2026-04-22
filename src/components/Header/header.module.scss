@@ -1,5 +1,3 @@
-@use "../../styles/partials/colors" as *;
-
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -26,13 +24,13 @@
 
 // Dark options
 .darkActive {
-  background: $color--secondary-dark;
+  background: var(--secondary-dark, var(--primary-dark));
 }
 
 .darkInactive {
-  background: $color--primary-light;
+  background: var(--primary-light, var(--accent));
 
-  border-bottom: solid 1px $color--gray-2;
+  border-bottom: solid 1px var(--mine-gray-2);
 }
 
 // Size classes
@@ -109,7 +107,7 @@
   transform: scaleX(0);
   transform-origin: bottom left;
 
-  background-color: $color--white;
+  background-color: var(--mine-white);
 
   position: relative;
 
@@ -143,11 +141,11 @@
 
   padding: 5px;
 
-  color: $color--blue-dark;
+  color: var(--mine-blue-dark);
 }
 
 .headerButton {
-  color: $color--white;
+  color: var(--mine-white);
 }
 
 .link {
@@ -155,5 +153,5 @@
 
   text-decoration: none;
 
-  color: $color--white;
+  color: var(--mine-white);
 }
