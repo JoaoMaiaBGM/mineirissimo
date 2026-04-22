@@ -8,6 +8,6 @@ export async function getPublicAssets({ preview = false } = {}) {
   return {
     logo: pub?.logo ?? null,
     ogImage: pub?.ogImage ?? null,
-    heroImage: pub?.heroImage ?? null,
+    hero: pub?.hero ?? null,
   };
 }

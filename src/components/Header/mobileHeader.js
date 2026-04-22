@@ -38,7 +38,14 @@ export function MobileHeader({ isMenuOpen, onOpenMenu, onCloseMenu }) {
   return (
     <div className="relative z-50 mx-auto flex w-full items-center md:hidden">
       <a href="/" className="w-[90px] h-[60px] relative flex items-center justify-center">
-        <Image src={Logo} alt="Logo Mineiríssimo" width={80} height={50} className="object-cover" />
+        <Image
+          src={Logo}
+          alt="Logo Mineiríssimo"
+          width={80}
+          height={50}
+          className="object-contain w-auto h-auto"
+          priority
+        />
       </a>
 
       <button

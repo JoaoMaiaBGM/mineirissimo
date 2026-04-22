@@ -1,26 +1,27 @@
+const navItems = [
+  {
+    label: 'Início',
+    href: '#',
+  },
+  {
+    label: 'Produtos',
+    href: '#produtos',
+  },
+  {
+    label: 'Sobre',
+    href: '#sobre',
+  },
+  {
+    label: 'Depoimentos',
+    href: '#depoimentos',
+  },
+  {
+    label: 'Eventos',
+    href: '#eventos',
+  },
+];
+
 export function Navbar({ isMobile = false, onNavigate }) {
-  const navItems = [
-    {
-      label: 'Início',
-      href: '#',
-    },
-    {
-      label: 'Produtos',
-      href: '#produtos',
-    },
-    {
-      label: 'Sobre',
-      href: '#sobre',
-    },
-    {
-      label: 'Depoimentos',
-      href: '#depoimentos',
-    },
-    {
-      label: 'Eventos',
-      href: '#eventos',
-    },
-  ];
 
   if (isMobile) {
     return (

@@ -12,7 +12,8 @@ export function DesktopHeader() {
             alt="Logo Mineiríssimo"
             width={100}
             height={60}
-            className="object-cover"
+            className="object-contain w-auto h-auto"
+            priority
           />
         </a>
 
