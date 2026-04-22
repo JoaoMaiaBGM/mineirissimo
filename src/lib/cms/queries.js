@@ -8,6 +8,7 @@ export const PUBLIC_ASSETS_QUERY = `
     public {
       logo { ${ASSET_FIELDS} }
       ogImage { ${ASSET_FIELDS} }
+      hero { ${ASSET_FIELDS} }
     }
   }
 `;
