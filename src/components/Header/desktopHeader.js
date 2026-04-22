@@ -4,7 +4,7 @@ import { Navbar } from './navbar';
 
 export function DesktopHeader() {
   return (
-    <header className="sticky top-0 z-50 bg-primary border-b border-border hidden md:block">
+    <header className="sticky top-0 z-50 bg-primary border-b border-border py-1 hidden md:block">
       <div className="container flex items-center justify-between">
         <a href="/" className="w-[130px] h-[90px] relative flex items-center justify-center">
           <Image
@@ -24,7 +24,7 @@ export function DesktopHeader() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          <button className="shadow-[2px_2px_8px_0_rgba(0,0,0,0.75)] btn-primary border border-accent">
+          <button className="shadow-[2px_2px_8px_0_rgba(0,0,0,0.75)] btn-primary border border-accent md:px-3 md:py-2 lg:px-6 lg:py-3">
             Faça Pedido
           </button>
         </a>
