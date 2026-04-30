@@ -1,55 +1,26 @@
-import Image from "next/image";
-import { Swiper } from "swiper/react";
-
-import { ProductsCards } from "components/ProductsCard";
-import { AnimatedElement } from "utils/animations";
-import ilustrationProducts from "../../assets/images/ilustration-products.png";
-
-import styles from "./products.module.scss";
+import { usePublicAssets } from 'lib/cms/usePublicAssets';
+import { AnimatedElement } from 'utils/animations';
+import { ProductCard } from './_components/product-card';
 
 export function Products() {
+  const { data } = usePublicAssets();
+  const products = data?.products;
+
   return (
-    <AnimatedElement
-      element="section"
-      className={`${styles.products} section-p`}
-      id="produtos"
-    >
-      <h4 className={styles.title}>Nossos Produtos</h4>
-      <h1 className={styles.headline}>
-        Apresentamos alguns de nosso produtos mais vendidos
-      </h1>
+    <div className="bg-mine-gray-150 section-p">
+      <AnimatedElement
+        element="section"
+        className="container flex flex-col items-center justify-center"
+        id="produtos"
+      >
+        <h1 className="h1 text-primary text-center mb-10">Nossos Produtos</h1>
 
-      <AnimatedElement element="div" className={styles.presentation}>
-        <div className={styles.content}>
-          <h3 className={styles.contentTitle}>
-            Nossa principal estrela, o pão de queijo!
-          </h3>
-          <p className={styles.paragraph}>
-            A receita é um segredinho que nossas avós já sabiam. Manuseavam
-            corretamente os ingredientes em porções generosas que, levadas ao
-            forno, recebiam o toque mágico da transformação. Retirados, já
-            crescidos, cheirosos e quentinhos, eram servidos com um delicioso
-            café. O que procuramos fazer, é um resgate dessa época. Um tempo que
-            não faz tanto tempo assim. E o principal, fazemos com todo
-            carinho,amor e alegria, como nossas vovós nos ensinaram. Como todos
-            os nossos produtos, nosso pão de queijo não leva farinha e é{" "}
-            <span className={styles.highlights}>100% sem glúten.</span>
-          </p>
-        </div>
-        <div className={styles.imageContainer}>
-          <Image
-            className={styles.image}
-            src={ilustrationProducts}
-            alt="Imagem com dois pães de queijos em cima de um prato"
-          />
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {products?.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
         </div>
       </AnimatedElement>
-
-      <AnimatedElement element="div">
-        <Swiper id="productList" className={styles.productList}>
-          <ProductsCards />
-        </Swiper>
-      </AnimatedElement>
-    </AnimatedElement>
+    </div>
   );
 }

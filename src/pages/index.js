@@ -17,7 +17,7 @@ export async function getStaticProps() {
   try {
     ({ ogImage } = await getPublicAssets());
   } catch (error) {
-    console.log(`OG Image Error: ${error}`);
+    console.log(`Images Error: ${error}`);
   }
 
   return {
