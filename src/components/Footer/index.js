@@ -1,78 +1,101 @@
-import Link from "next/link";
-import styles from "./footer.module.scss";
+import Link from 'next/link';
 
-import {
-  IoLogoInstagram,
-  IoMailOutline,
-  IoLocationOutline,
-} from "react-icons/io5";
+import { IoLogoInstagram, IoLogoWhatsapp, IoMailOutline } from 'react-icons/io5';
+const informationLinks = [
+  {
+    label: 'Políticas de privacidade',
+    href: '/politicas_de_privacidade',
+  },
+  {
+    label: 'Termos e condições',
+    href: '/termos_e_condicoes',
+  },
+];
 
-import { InstagramFeed } from "components/InstagramFeed";
-import { AnimatedElement } from "utils/animations";
+const contactLinks = [
+  {
+    label: 'mineirissimoartesanal@gmail.com',
+    href: null,
+    icon: <IoMailOutline size={18} />,
+  },
+  {
+    label: '(81) 9.9627-2423',
+    href: 'https://wa.me/5581996272423',
+    icon: <IoLogoWhatsapp size={18} />,
+  },
+];
+
+const socialLinks = [
+  {
+    label: '@mineirissimo.recife',
+    href: 'http://instagram.com/mineirissimo.recife',
+    icon: <IoLogoInstagram size={18} />,
+  },
+];
 
 export function Footer() {
   return (
-    <AnimatedElement element="footer" className={styles.footer}>
-      <div className={styles.container}>
-        <div className={`${styles.content} col-3`}>
-          <header className={styles.instagram}>
-            <IoLogoInstagram className={styles.logoInstagram} />
-            <h5 className={styles.contentTitle}>Instagram</h5>
-          </header>
-          <ul className={styles.socialLinksList}>
-            <li className={styles.sociaLlink}>
-              <Link
-                target="_blank"
-                href="http://instagram.com/mineirissimo.recife"
-                rel="noopener noreferrer"
-              >
-                <InstagramFeed />
-              </Link>
-            </li>
-          </ul>
+    <footer className="section-p bg-primary text-center">
+      <div className="container pb-8 flex flex-col items-start justify-center gap-6 lg:gap-8 md:flex-row">
+        <div className="flex flex-col items-start justify-center gap-2">
+          <h4 className="h4 text-mine-white">Informações</h4>
+
+          {informationLinks.map((link) => (
+            <Link
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-small text-mine-white gap-2"
+            >
+              {link.icon}
+              {link.label}
+            </Link>
+          ))}
         </div>
 
-        <div className={`${styles.content} col-3`}>
-          <h5 className={styles.contentTitle}>Informações</h5>
-          <ul className={styles.list}>
-            <li className={styles.item}>
-              <Link href="/politicas_de_privacidade">
-                Políticas de privacidade
-              </Link>
-            </li>
-            <li className={styles.item}>
-              <Link href="/termos_e_condicoes">Termos e condições</Link>
-            </li>
-          </ul>
-        </div>
+        <div className="flex flex-col items-start justify-center gap-2">
+          <h4 className="h4 text-mine-white">Contato</h4>
 
-        <div className={`${styles.content} col-4`}>
-          <h5 className={styles.contentTitle}>Sobre</h5>
-          <ul className={styles.list}>
-            <li className={styles.item}>
-              <IoLocationOutline />
-              R. Sergio Magalhães, 54 Graças Recife-PE
-            </li>
-
-            <li className={styles.item}>
+          {contactLinks.map((link) =>
+            link.href ? (
               <Link
-                href="mailto:mineirissimoartesanal@gmail.com"
+                href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
+                className="p-small text-mine-white flex flex-row items-center gap-2"
               >
-                <IoMailOutline />
-                mineirissimoartesanal@gmail.com
+                {link.icon}
+                {link.label}
               </Link>
-            </li>
+            ) : (
+              <div className="p-small text-mine-white flex flex-row items-center gap-2">
+                {link.icon}
+                {link.label}
+              </div>
+            )
+          )}
+        </div>
 
-            <li className={styles.item}>Telefone: (81)9.9627-2423</li>
-          </ul>
+        <div className="flex flex-col items-start justify-center gap-2">
+          <h4 className="h4 text-mine-white">Redes Sociais</h4>
+
+          {socialLinks.map((link) => (
+            <Link
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="p-small text-mine-white flex flex-row items-center gap-2"
+            >
+              {link.icon}
+              {link.label}
+            </Link>
+          ))}
         </div>
       </div>
 
-      <div className={styles.contentRights}>
-        <p>©2010 Mineirissimo. Todos os direitos reservados.</p>
+      <div className="container text-mine-white border-t border-mine-gray-2 pt-4">
+        <p className="p-small">©2010 Mineirissimo. Todos os direitos reservados.</p>
       </div>
-    </AnimatedElement>
+    </footer>
   );
 }
