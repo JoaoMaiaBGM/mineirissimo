@@ -1,12 +1,8 @@
-import { About } from 'components/About';
-import { ScrollToTopButton } from 'components/Buttons/scrollToTopButton';
-import { Contact } from 'components/Contact';
 import { CookieBanner } from 'components/Cookies';
-import { Events } from 'components/Events';
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
 import { Hero } from 'components/Hero';
-import { Innovations } from 'components/Innovations';
+import { Localization } from 'components/Localization';
 import { Products } from 'components/Products';
 import { Seo } from 'components/Seo';
 import { Testimonials } from 'components/Testimonials';
@@ -17,7 +13,7 @@ export async function getStaticProps() {
   try {
     ({ ogImage } = await getPublicAssets());
   } catch (error) {
-    console.log(`OG Image Error: ${error}`);
+    console.log(`Images Error: ${error}`);
   }
 
   return {
@@ -41,14 +37,14 @@ export default function Home({ ogImage }) {
       <main>
         <Hero />
         <Products />
-        <About />
+        {/* <About /> */}
         <Testimonials />
-        <Innovations />
-        <Events />
-        <Contact />
+        {/* <Innovations /> */}
+        {/* <Events /> */}
+        <Localization />
         <Footer />
         <CookieBanner />
-        <ScrollToTopButton />
+        {/*  <ScrollToTopButton /> */}
       </main>
     </>
   );

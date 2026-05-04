@@ -45,42 +45,42 @@
 
 :root {
   /* Mineiríssimo Brand Colors */
-  --primary: oklab(0.39 0.11 0.05); /* Bordô Profundo */
-  --primary-dark: oklab(0.32 0.1 0.04); /* Bordô Profundo Escuro */
-  --primary-light: #c7776b;
-  --primary-foreground: oklch(0.99 0 0); /* Branco Natural */
-  --secondary: oklch(0.64 0.18 45); /* Laranja Vibrante */
-  --secondary-dark: #3d4657;
-  --secondary-foreground: oklch(0.99 0 0); /* Branco Natural */
-  --accent: oklch(0.65 0.12 65); /* Dourado Quente */
-  --accent-foreground: oklch(0.42 0.18 10); /* Bordô Profundo */
-  --sidebar-primary: oklch(0.42 0.18 10); /* Bordô Profundo */
-  --sidebar-primary-foreground: oklch(0.99 0 0); /* Branco Natural */
-  --chart-1: oklch(0.65 0.12 65); /* Dourado */
-  --chart-2: oklch(0.64 0.18 45); /* Laranja */
-  --chart-3: oklch(0.42 0.18 10); /* Bordô */
-  --chart-4: oklch(0.2 0.01 0); /* Cinza Escuro */
-  --chart-5: oklch(0.92 0.01 0); /* Cinza Claro */
+  --primary: oklab(0.39 0.11 0.05); /* Deep Red */
+  --primary-dark: oklab(0.32 0.1 0.04); /* Deep Red Dark */
+  --primary-light: #c7776b; /* Light Red */
+  --primary-foreground: oklch(0.99 0 0); /* White */
+  --secondary: oklch(0.64 0.18 45); /* Orange */
+  --secondary-dark: #3d4657; /* Dark Gray */
+  --secondary-foreground: oklch(0.99 0 0); /* White */
+  --accent: oklch(0.65 0.12 65); /* Gold */
+  --accent-foreground: oklch(0.42 0.18 10); /* Deep Red */
+  --sidebar-primary: oklch(0.42 0.18 10); /* Deep Red */
+  --sidebar-primary-foreground: oklch(0.99 0 0); /* White */
+  --chart-1: oklch(0.65 0.12 65); /* Gold */
+  --chart-2: oklch(0.64 0.18 45); /* Orange */
+  --chart-3: oklch(0.42 0.18 10); /* Deep Red */
+  --chart-4: oklch(0.2 0.01 0); /* Dark Gray */
+  --chart-5: oklch(0.92 0.01 0); /* Light Gray */
   --radius: 0.25rem; /* 4px */
-  --background: oklch(0.99 0 0); /* Branco Natural */
-  --foreground: oklch(0.2 0.01 0); /* Cinza Escuro */
-  --card: oklch(0.99 0 0); /* Branco Natural */
-  --card-foreground: oklch(0.2 0.01 0); /* Cinza Escuro */
-  --popover: oklch(0.99 0 0); /* Branco Natural */
-  --popover-foreground: oklch(0.2 0.01 0); /* Cinza Escuro */
-  --muted: oklch(0.92 0.01 0); /* Cinza Claro */
-  --muted-foreground: oklch(0.42 0.18 10); /* Bordô Profundo */
-  --destructive: oklch(0.577 0.245 27.325); /* Vermelho Erro */
-  --destructive-foreground: oklch(0.985 0 0); /* Branco */
-  --border: oklch(0.92 0.01 0); /* Cinza Claro */
-  --input: oklch(0.92 0.01 0); /* Cinza Claro */
-  --ring: oklch(0.42 0.18 10); /* Bordô Profundo */
-  --sidebar: oklch(0.42 0.18 10); /* Bordô Profundo */
-  --sidebar-foreground: oklch(0.99 0 0); /* Branco Natural */
-  --sidebar-accent: oklch(0.65 0.12 65); /* Dourado Quente */
-  --sidebar-accent-foreground: oklch(0.42 0.18 10); /* Bordô Profundo */
-  --sidebar-border: oklch(0.65 0.12 65); /* Dourado Quente */
-  --sidebar-ring: oklch(0.65 0.12 65); /* Dourado Quente */
+  --background: oklch(0.99 0 0); /* White */
+  --foreground: oklch(0.2 0.01 0); /* Dark Gray */
+  --card: oklch(0.99 0 0); /* White */
+  --card-foreground: oklch(0.2 0.01 0); /* Dark Gray */
+  --popover: oklch(0.99 0 0); /* White */
+  --popover-foreground: oklch(0.2 0.01 0); /* Dark Gray */
+  --muted: oklch(0.92 0.01 0); /* Light Gray */
+  --muted-foreground: oklch(0.42 0.18 10); /* Deep Red */
+  --destructive: oklch(0.577 0.245 27.325); /* Red */
+  --destructive-foreground: oklch(0.985 0 0); /* White */
+  --border: oklch(0.92 0.01 0); /* Light Gray */
+  --input: oklch(0.92 0.01 0); /* Light Gray */
+  --ring: oklch(0.42 0.18 10); /* Deep Red */
+  --sidebar: oklch(0.42 0.18 10); /* Deep Red */
+  --sidebar-foreground: oklch(0.99 0 0); /* White */
+  --sidebar-accent: oklch(0.65 0.12 65); /* Gold */
+  --sidebar-accent-foreground: oklch(0.42 0.18 10); /* Deep Red */
+  --sidebar-border: oklch(0.65 0.12 65); /* Gold */
+  --sidebar-ring: oklch(0.65 0.12 65); /* Gold */
 
   /* Legacy palette tokens (used by older SCSS modules) */
   --mine-black: #000000;
@@ -183,7 +183,7 @@
     width: 100%;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 1rem; /* 16px - mobile padding */
+    padding-left: 1rem;
     padding-right: 1rem;
   }
 
@@ -194,16 +194,16 @@
 
   @media (min-width: 640px) {
     .container {
-      padding-left: 1.5rem; /* 24px - tablet padding */
+      padding-left: 1.5rem;
       padding-right: 1.5rem;
     }
   }
 
   @media (min-width: 1024px) {
     .container {
-      padding-left: 2rem; /* 32px - desktop padding */
+      padding-left: 2rem;
       padding-right: 2rem;
-      max-width: 1280px; /* Standard content width */
+      max-width: 1280px;
     }
   }
 
@@ -211,11 +211,11 @@
     .section-pt {
       @apply pt-14;
 
-      @media (min-width: theme("screens.lg")) {
+      @media (min-width: theme('screens.lg')) {
         @apply pt-16;
       }
 
-      @media (min-width: theme("screens.xl")) {
+      @media (min-width: theme('screens.xl')) {
         @apply pt-20;
       }
     }
@@ -223,11 +223,11 @@
     .section-mt {
       @apply mt-14;
 
-      @media (min-width: theme("screens.lg")) {
+      @media (min-width: theme('screens.lg')) {
         @apply mt-16;
       }
 
-      @media (min-width: theme("screens.xl")) {
+      @media (min-width: theme('screens.xl')) {
         @apply mt-20;
       }
     }
@@ -235,11 +235,11 @@
     .section-mb {
       @apply mb-14;
 
-      @media (min-width: theme("screens.lg")) {
+      @media (min-width: theme('screens.lg')) {
         @apply mb-16;
       }
 
-      @media (min-width: theme("screens.xl")) {
+      @media (min-width: theme('screens.xl')) {
         @apply mb-20;
       }
     }
@@ -247,11 +247,11 @@
     .section-pb {
       @apply pb-14;
 
-      @media (min-width: theme("screens.lg")) {
+      @media (min-width: theme('screens.lg')) {
         @apply pb-16;
       }
 
-      @media (min-width: theme("screens.xl")) {
+      @media (min-width: theme('screens.xl')) {
         @apply pb-20;
       }
     }
@@ -259,11 +259,11 @@
     .section-m {
       @apply my-14;
 
-      @media (min-width: theme("screens.lg")) {
+      @media (min-width: theme('screens.lg')) {
         @apply my-16;
       }
 
-      @media (min-width: theme("screens.xl")) {
+      @media (min-width: theme('screens.xl')) {
         @apply my-20;
       }
     }
@@ -271,17 +271,16 @@
     .section-p {
       @apply py-14;
 
-      @media (min-width: theme("screens.lg")) {
+      @media (min-width: theme('screens.lg')) {
         @apply py-16;
       }
 
-      @media (min-width: theme("screens.xl")) {
+      @media (min-width: theme('screens.xl')) {
         @apply py-20;
       }
     }
   }
 
-  /* Button Styles */
   .btn-primary {
     @apply bg-primary text-primary-foreground px-6 py-3 rounded transition-all duration-200 font-semibold;
   }
@@ -307,15 +306,13 @@
     @apply bg-accent/20;
   }
 
-  /* Card Styles */
   .card {
-    @apply bg-card text-card-foreground border border-border rounded-lg p-6 shadow-sm transition-shadow duration-200;
+    @apply bg-card text-card-foreground border border-border rounded-xl p-6 shadow-sm transition-shadow duration-200;
   }
   .card:hover {
     @apply shadow-md;
   }
 
-  /* Input Styles */
   .input-base {
     @apply w-full px-4 py-3 border border-border rounded bg-background text-foreground placeholder-foreground/50 transition-all duration-200;
   }
@@ -323,12 +320,10 @@
     @apply outline-none border-primary ring-2 ring-primary/10;
   }
 
-  /* Divider */
   .divider {
     @apply h-px bg-border;
   }
 
-  /* Text Utilities */
   .text-muted {
     @apply text-muted-foreground;
   }
@@ -337,7 +332,6 @@
     @apply text-accent;
   }
 
-  /* Section Spacing */
   .section-padding {
     @apply py-12 md:py-16 lg:py-20;
   }
