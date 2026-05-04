@@ -42,6 +42,7 @@ export function Footer() {
 
           {informationLinks.map((link) => (
             <Link
+              key={link.label}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
@@ -59,6 +60,7 @@ export function Footer() {
           {contactLinks.map((link) =>
             link.href ? (
               <Link
+                key={link.label}
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
@@ -68,7 +70,10 @@ export function Footer() {
                 {link.label}
               </Link>
             ) : (
-              <div className="p-small text-mine-white flex flex-row items-center gap-2">
+              <div
+                key={link.label}
+                className="p-small text-mine-white flex flex-row items-center gap-2"
+              >
                 {link.icon}
                 {link.label}
               </div>
@@ -81,6 +86,7 @@ export function Footer() {
 
           {socialLinks.map((link) => (
             <Link
+              key={link.label}
               href={link.href}
               target="_blank"
               rel="noopener noreferrer"
