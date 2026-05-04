@@ -6,12 +6,12 @@ import { Navbar } from './navbar';
 export function MobileHeader({ isMenuOpen, onOpenMenu, onCloseMenu }) {
   const menuOverlay = (
     <div
-      className={`fixed inset-0 z-2147483647 md:hidden ${
+      className={`fixed inset-0 z-50 overflow-hidden md:hidden ${
         isMenuOpen ? 'pointer-events-auto' : 'pointer-events-none'
       }`}
     >
       <div
-        className={`absolute inset-0 bg-[#e6e6e6] transition-transform duration-500 ease-out will-change-transform ${
+        className={`absolute inset-0 bg-mine-gray-150 transition-transform duration-500 ease-out will-change-transform ${
           isMenuOpen ? 'translate-x-0' : 'translate-x-full'
         }`}
       />
@@ -24,7 +24,7 @@ export function MobileHeader({ isMenuOpen, onOpenMenu, onCloseMenu }) {
         <button
           type="button"
           onClick={onCloseMenu}
-          className="absolute top-14 right-12 text-[56px] leading-none text-black/85"
+          className="absolute top-14 right-12 text-[56px] leading-none text-mine-gray-5"
           aria-label="Close menu"
         >
           <span className="block translate-y-[-2px]">&times;</span>

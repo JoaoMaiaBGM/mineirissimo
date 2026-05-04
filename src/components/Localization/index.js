@@ -1,29 +1,22 @@
-import Link from "next/link";
-import Image from "next/image";
+import Image from 'next/image';
+import Link from 'next/link';
 
-import Logo from "../../assets/icons/logo.png";
-import { BsWhatsapp } from "react-icons/bs";
+import { BsWhatsapp } from 'react-icons/bs';
+import Logo from '../../assets/icons/logo.png';
 
-import { PrimaryButton } from "components/Buttons";
-import { AnimatedElement } from "utils/animations";
+import { PrimaryButton } from 'components/Buttons';
 
-import styles from "./contact.module.scss";
+import styles from './localization.module.scss';
 
-export function Contact() {
+export function Localization() {
   return (
-    <AnimatedElement element="section" className={styles.contact} id="contato">
-      <div className={styles.container}>
+    <section element="section" className="section-p bg-mine-gray-150 text-center" id="localization">
+      <div className="container flex flex-col items-center justify-center gap-8 md:flex-row">
         <div className={styles.content}>
           <div className={styles.logoContainer}>
-            <Image
-              className={styles.logo}
-              src={Logo}
-              alt="Logomarca da Mineiríssimo"
-            />
+            <Image className={styles.logo} src={Logo} alt="Logomarca da Mineiríssimo" />
           </div>
-          <h2 className={styles.title}>
-            A felicidade em cada produto. Prove o melhor!
-          </h2>
+          <h2 className="h2 text-primary">A felicidade em cada produto. Prove o melhor!</h2>
           <Link
             href="https://web.whatsapp.com/send?phone=5581996272423"
             target="_blank"
@@ -31,7 +24,7 @@ export function Contact() {
           >
             <PrimaryButton className={styles.button} size="large">
               <BsWhatsapp />
-              peça pelo whatsapp
+              Peça agora
             </PrimaryButton>
           </Link>
         </div>
@@ -46,6 +39,6 @@ export function Contact() {
           </div>
         </div>
       </div>
-    </AnimatedElement>
+    </section>
   );
 }

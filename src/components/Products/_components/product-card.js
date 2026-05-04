@@ -3,9 +3,9 @@ import Image from 'next/image';
 export function ProductCard({ product }) {
   return (
     <div className="card flex flex-col items-center justify-center gap-6">
-      <h5 className="h5 text-primary">{product.title}</h5>
+      <h4 className="h4 text-primary capitalize text-center">{product.title}</h4>
 
-      <div className="w-80 h-52 aspect-square">
+      <div className="max-w-fit max-h-52 aspect-4/3">
         <Image
           src={product.url}
           className="w-full h-full object-cover rounded-xl"
@@ -15,9 +15,11 @@ export function ProductCard({ product }) {
         />
       </div>
 
-      <p className="p-small whitespace-pre-line text-center">{product.alt}</p>
+      {/* <p className="p-small whitespace-pre-line text-center">{product.alt}</p> */}
 
-      <button className="btn-primary">Saiba mais</button>
+      <button className="btn-primary" onClick={() => console.log(product)}>
+        Saiba mais
+      </button>
     </div>
   );
 }
