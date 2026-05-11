@@ -1,25 +1,15 @@
-import { Swiper } from "swiper/react";
-
-import { TestimonialsCards } from "components/TestimonialsCards";
-import { AnimatedElement } from "utils/animations";
-
-import styles from "./testimonials.module.scss";
+import { TestimonialsCards } from 'components/TestimonialsCards';
+import { AnimatedElement } from 'utils/animations';
 
 export function Testimonials() {
   return (
-    <AnimatedElement
-      element="section"
-      className={styles.testimonials}
-      id="depoimentos"
-    >
-      <h4 className={styles.title}>depoimentos</h4>
-      <h1 className={styles.headline}>Veja quem já passou por aqui</h1>
+    <AnimatedElement element="section" className="section-p container" id="depoimentos">
+      <h4 className="p-medium uppercase text-primary mb-3 text-center tracking-wide">
+        depoimentos
+      </h4>
+      <h2 className="h2 mb-12 text-center text-primary md:mb-14">Veja quem já passou por aqui</h2>
 
-      <AnimatedElement element="div">
-        <Swiper className={styles.testimonialsList} id="testimonialsList">
-          <TestimonialsCards />
-        </Swiper>
-      </AnimatedElement>
+      <TestimonialsCards id="testimonialslist" />
     </AnimatedElement>
   );
 }
