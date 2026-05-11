@@ -39,12 +39,9 @@ export default function Home({ ogImage }) {
         <Products />
         {/* <About /> */}
         <Testimonials />
-        {/* <Innovations /> */}
-        {/* <Events /> */}
         <Localization />
         <Footer />
         <CookieBanner />
-        {/*  <ScrollToTopButton /> */}
       </main>
     </>
   );
