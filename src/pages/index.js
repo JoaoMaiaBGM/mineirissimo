@@ -2,7 +2,7 @@ import { CookieBanner } from 'components/Cookies';
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
 import { Hero } from 'components/Hero';
-import { Localization } from 'components/Localization';
+import { Location } from 'components/Location';
 import { Products } from 'components/Products';
 import { Seo } from 'components/Seo';
 import { Testimonials } from 'components/Testimonials';
@@ -39,7 +39,7 @@ export default function Home({ ogImage }) {
         <Products />
         {/* <About /> */}
         <Testimonials />
-        <Localization />
+        <Location />
         <Footer />
         <CookieBanner />
       </main>

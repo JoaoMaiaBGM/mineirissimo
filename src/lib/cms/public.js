@@ -1,5 +1,5 @@
 import { cmsQuery } from './client';
-import { PUBLIC_ASSETS_QUERY } from './queries';
+import { PUBLIC_ASSETS_QUERY, STORE_FACADE_ASSET_ID } from './queries';
 
 export async function getPublicAssets({ preview = false } = {}) {
   const data = await cmsQuery(PUBLIC_ASSETS_QUERY, { preview });
@@ -21,10 +21,25 @@ export async function getPublicAssets({ preview = false } = {}) {
     })
     .filter(Boolean);
 
+  const storeFrontRecord = (pub?.generalImages ?? []).find(
+    (record) => record?.id === STORE_FACADE_ASSET_ID
+  );
+  const storeFrontImage = storeFrontRecord?.responsiveImage;
+
   return {
     logo: pub?.logo ?? null,
     ogImage: pub?.ogImage ?? null,
     hero: pub?.hero ?? null,
     products,
+    storeFront: storeFrontImage?.src
+      ? {
+          id: storeFrontRecord.id,
+          url: storeFrontImage.src,
+          alt: typeof storeFrontImage.alt === 'string' ? storeFrontImage.alt : '',
+          title: storeFrontImage.title ?? null,
+          width: storeFrontImage.width,
+          height: storeFrontImage.height,
+        }
+      : null,
   };
 }

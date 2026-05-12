@@ -10,6 +10,19 @@ export const PRODUCT_RESPONSIVE_IMAGE_FIELDS = `
   title
 `;
 
+export const GENERAL_IMAGE_FIELDS = `
+  id
+  responsiveImage {
+    src
+    alt
+    title
+    width
+    height
+  }
+`;
+
+export const STORE_FACADE_ASSET_ID = 'GvoMGbL4SQGBQ6RmT-zLBQ';
+
 export const PUBLIC_ASSETS_QUERY = `
   query PublicAssets {
     public {
@@ -22,6 +35,9 @@ export const PUBLIC_ASSETS_QUERY = `
         responsiveImage {
           ${PRODUCT_RESPONSIVE_IMAGE_FIELDS}
         }
+      }
+      generalImages {
+        ${GENERAL_IMAGE_FIELDS}
       }
     }
   }
