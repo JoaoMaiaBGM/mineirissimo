@@ -54,7 +54,7 @@ export function TestimonialsCards() {
   }, [slidesPerView, syncNav]);
 
   return (
-    <div className={styles.carousel}>
+    <div className={`container ${styles.carousel}`}>
       <button
         aria-label="Previous testimonial"
         className={styles.control}

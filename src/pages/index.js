@@ -1,3 +1,4 @@
+import { About } from 'components/About';
 import { CookieBanner } from 'components/Cookies';
 import { Footer } from 'components/Footer';
 import { Header } from 'components/Header';
@@ -37,7 +38,7 @@ export default function Home({ ogImage }) {
       <main>
         <Hero />
         <Products />
-        {/* <About /> */}
+        <About />
         <Testimonials />
         <Location />
         <Footer />

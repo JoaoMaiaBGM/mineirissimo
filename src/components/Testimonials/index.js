@@ -2,7 +2,7 @@ import { TestimonialsCards } from 'components/TestimonialsCards';
 
 export function Testimonials() {
   return (
-    <section className="section-p container" id="depoimentos">
+    <section className="section-p bg-mine-gray-150" id="depoimentos">
       <h4 className="p-medium uppercase text-primary mb-3 text-center tracking-wide">
         depoimentos
       </h4>
