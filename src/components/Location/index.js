@@ -22,10 +22,10 @@ export function Location() {
   return (
     <section className="section-p bg-mine-gray-150 text-center" id="localization">
       <div className="container flex flex-col items-center justify-center">
-        <h2 className="h1 text-primary mb-8">Onde estamos</h2>
+        <h2 className="h1 text-primary">Onde estamos</h2>
 
-        <div className="h-full flex flex-col items-center justify-center text-center gap-12 md:flex-row">
-          <div className="object-top w-1/2 md:1/3">
+        <div className="h-full section-p flex flex-col items-center justify-center text-center gap-16 md:flex-row">
+          <div className="w-1/2 md:w-1/3">
             {facade?.url ? (
               <Image
                 className="w-full h-full object-contain rounded-2xl"
