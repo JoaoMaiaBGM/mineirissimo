@@ -21,7 +21,7 @@ export function WhoWeAre() {
     <div className="flex flex-col items-start justify-center gap-8">
       {whoWeAreContent.map((content) => {
         return (
-          <p className="p-medium" key={content.id}>
+          <p className="p-large" key={content.id}>
             {content.description}
           </p>
         );

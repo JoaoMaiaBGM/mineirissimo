@@ -6,7 +6,7 @@ import glutenFreeIcon from '../_assets/gluten-free-icon.png';
 import heartIcon from '../_assets/heart-icon.png';
 
 const Divider = () => {
-  return <div className="w-full h-px bg-accent md:w-px md:h-24" />;
+  return <div className="w-px h-24 bg-accent" />;
 };
 
 const cardContent = [
@@ -40,9 +40,9 @@ export function NumberCards() {
   return cardContent.map((item) => (
     <div
       key={item.title}
-      className="p-6 min-h-40 w-full flex flex-col items-center justify-start gap-6 shadow-md rounded-lg bg-mine-gray-150 md:flex-row lg:p-2"
+      className="p-6 min-h-40 w-full flex flex-row items-center justify-start gap-6 shadow-md rounded-lg bg-mine-gray-150 md:p-2"
     >
-      <div className="w-28 h-28 flex items-center justify-center lg:w-20 lg:h-20">
+      <div className="w-28 h-28 flex items-center justify-center lg:w-28 lg:h-28">
         <Image
           src={item.icon}
           alt={item.title}
@@ -54,8 +54,8 @@ export function NumberCards() {
 
       <Divider />
 
-      <div className="flex flex-col max-w-[250px] items-start justify-center xl:max-w-[350px]">
-        <h2 className="h2 text-accent">{item.title}</h2>
+      <div className="flex flex-col max-w-52 items-start justify-center md:max-w-full lg:max-w-60 xl:max-w-[350px]">
+        <h2 className="h1 text-accent">{item.title}</h2>
         <p className="p-large-bold text-primary">{item.subtitle}</p>
         <span className="p-small text-mine-gray-300 md:p-caption">{item.description}</span>
       </div>
