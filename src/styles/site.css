@@ -16,6 +16,8 @@
   --color-popover: var(--popover);
   --color-popover-foreground: var(--popover-foreground);
   --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);
@@ -136,8 +138,7 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground;
-    font-family: 'Inter', sans-serif;
+    @apply bg-background text-foreground font-sans;
     font-size: 16px;
     line-height: 1.6;
   }
@@ -154,14 +155,14 @@
   }
   button,
   [role='button'] {
-    font-family: 'Montserrat', sans-serif;
+    @apply font-sans;
     font-weight: 600;
     transition: all 200ms ease-in-out;
   }
   input,
   textarea,
   select {
-    font-family: 'Inter', sans-serif;
+    @apply font-sans;
   }
 }
 
@@ -286,7 +287,7 @@
   }
   .btn-primary:hover {
     @apply shadow-lg;
-    background-color: oklch(0.38 0.18 10);
+    background-color: var(--primary-dark);
   }
   .btn-primary:active {
     @apply scale-95;

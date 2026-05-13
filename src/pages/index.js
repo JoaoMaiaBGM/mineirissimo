@@ -1,5 +1,4 @@
 import { About } from 'components/About';
-import { CookieBanner } from 'components/Cookies';
 import { Hero } from 'components/Hero';
 import { Location } from 'components/Location';
 import { Products } from 'components/Products';
@@ -42,7 +41,6 @@ export default function Home({ ogImage }) {
         <Testimonials />
         <Location />
         <Footer />
-        <CookieBanner />
       </main>
     </>
   );

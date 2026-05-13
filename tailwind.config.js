@@ -34,7 +34,15 @@ const config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['var(--font-sans)'],
+        sans: [
+          'Playfair Display',
+          'ui-serif',
+          'Georgia',
+          'Cambria',
+          'Times New Roman',
+          'Times',
+          'serif',
+        ],
       },
       spacing: {
         header: '57px',
