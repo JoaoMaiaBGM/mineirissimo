@@ -1,0 +1,66 @@
+.carousel {
+  align-items: center;
+  display: flex;
+  gap: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .carousel {
+    gap: 1rem;
+  }
+}
+
+.swiperCol {
+  flex: 1;
+  min-width: 0;
+}
+
+.swiper {
+  overflow: hidden;
+  padding-bottom: 2.75rem;
+}
+
+.swiper :global(.swiper-slide) {
+  box-sizing: border-box;
+  display: flex;
+  height: auto;
+}
+
+.swiper :global(.swiper-pagination) {
+  bottom: 0;
+}
+
+.swiper :global(.swiper-pagination-bullet) {
+  width: 8px;
+  height: 8px;
+  opacity: 1;
+  background: var(--mine-gray-6);
+}
+
+.swiper :global(.swiper-pagination-bullet-active) {
+  background: var(--primary);
+}
+
+.control {
+  align-items: center;
+  background: var(--mine-white);
+  border: none;
+  border-radius: 9999px;
+  box-shadow: 0 0 12px var(--mine-shadow);
+  color: var(--primary);
+  cursor: pointer;
+  display: flex;
+  flex-shrink: 0;
+  height: 2.75rem;
+  justify-content: center;
+  width: 2.75rem;
+}
+
+.control:hover:not(:disabled) {
+  opacity: 0.92;
+}
+
+.control:disabled {
+  cursor: not-allowed;
+  opacity: 0.35;
+}

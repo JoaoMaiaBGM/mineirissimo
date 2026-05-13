@@ -1,1 +1,2 @@
-export * from './about-card';
+export * from './number-cards';
+export * from './who-we-are';

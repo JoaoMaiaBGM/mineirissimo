@@ -16,7 +16,7 @@ export function TestimonialsCards() {
   const [navDisabled, setNavDisabled] = useState({ prev: true, next: true });
 
   const slidesPerViewConfig = (width) => {
-    if (width > 768) {
+    if (width > 1024) {
       return 3;
     }
     if (width > 480) {
@@ -82,7 +82,7 @@ export function TestimonialsCards() {
         >
           {testimonialsData.map((testimonial) => (
             <SwiperSlide key={testimonial.id}>
-              <blockquote className="flex h-full min-h-[280px] flex-col rounded-[18px] bg-mine-gray-150 p-8 shadow-[0px_0px_12px_var(--mine-shadow)] sm:min-h-[300px] sm:p-9 md:p-10">
+              <blockquote className="flex h-full min-h-[280px] flex-col rounded-[18px] bg-mine-white p-8 shadow-[0px_0px_12px_var(--mine-shadow)] sm:min-h-[300px] sm:p-9 md:p-10">
                 <FaQuoteLeft
                   aria-hidden
                   className="mb-5 shrink-0 text-3xl text-primary sm:text-4xl"
