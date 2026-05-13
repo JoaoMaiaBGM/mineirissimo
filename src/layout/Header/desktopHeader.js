@@ -4,9 +4,12 @@ import { Navbar } from './navbar';
 
 export function DesktopHeader() {
   return (
-    <header className="sticky top-0 z-50 bg-primary border-b border-border py-1 hidden md:block">
+    <header className="sticky top-0 z-50 bg-primary border-b border-border py-2 hidden md:block">
       <div className="container flex items-center justify-between">
-        <a href="/" className="w-[130px] h-[90px] relative flex items-center justify-center">
+        <a
+          href="/"
+          className="w-[100px] h-full relative flex items-center justify-center lg:w-[130px]"
+        >
           <Image
             src={Logo}
             alt="Logo Mineiríssimo"
