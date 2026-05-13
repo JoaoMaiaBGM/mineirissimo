@@ -20,7 +20,7 @@ export function Location() {
   const facade = data?.storeFront;
 
   return (
-    <section className="section-p bg-mine-gray-150 text-center" id="localization">
+    <section className="section-p text-center" id="localization">
       <div className="container flex flex-col items-center justify-center">
         <h2 className="h1 text-primary">Onde estamos</h2>
 
