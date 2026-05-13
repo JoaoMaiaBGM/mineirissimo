@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { SectionTitle } from 'layout/SectionTitle';
 import { usePublicAssets } from 'lib/cms/usePublicAssets';
 import { FiClock, FiMapPin } from 'react-icons/fi';
 import Logo from '../../assets/icons/logo.png';
@@ -20,25 +21,27 @@ export function Location() {
   const facade = data?.storeFront;
 
   return (
-    <section className="section-p text-center" id="localization">
+    <section className="section-p text-center" id="loja">
       <div className="container flex flex-col items-center justify-center">
-        <h2 className="h1 text-primary">Onde estamos</h2>
+        <SectionTitle title="Onde estamos" />
 
-        <div className="h-full section-p flex flex-col items-center justify-center text-center gap-16 md:flex-row">
-          <div className="w-1/2 md:w-1/3">
+        <div className="h-full flex flex-col items-center justify-center text-center gap-16 md:flex-row">
+          <div className="w-1/2 md:w-1/4">
             {facade?.url ? (
               <Image
                 className="w-full h-full object-contain rounded-2xl"
                 src={facade.url}
-                alt={facade.alt ?? 'Fachada da loja Mineiríssimo'}
-                width={facade.width ?? 1200}
-                height={facade.height ?? 800}
+                alt={facade.alt}
+                width={facade.width}
+                height={facade.height}
+                loading="lazy"
               />
             ) : (
               <Image
                 className="w-full h-full object-contain"
                 src={Logo}
                 alt="Logomarca da Mineiríssimo"
+                loading="lazy"
               />
             )}
           </div>

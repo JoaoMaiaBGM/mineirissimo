@@ -16,13 +16,12 @@ const navItems = [
     href: '#depoimentos',
   },
   {
-    label: 'Eventos',
-    href: '#eventos',
+    label: 'Loja',
+    href: '#loja',
   },
 ];
 
 export function Navbar({ isMobile = false, onNavigate }) {
-
   if (isMobile) {
     return (
       <nav className="mx-auto flex w-[62%] max-w-[420px] flex-col pt-32!">

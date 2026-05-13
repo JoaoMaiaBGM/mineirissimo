@@ -1,12 +1,12 @@
 import { About } from 'components/About';
 import { CookieBanner } from 'components/Cookies';
-import { Footer } from 'components/Footer';
-import { Header } from 'components/Header';
 import { Hero } from 'components/Hero';
 import { Location } from 'components/Location';
 import { Products } from 'components/Products';
 import { Seo } from 'components/Seo';
 import { Testimonials } from 'components/Testimonials';
+import { Footer } from 'layout/Footer';
+import { Header } from 'layout/Header';
 import { getPublicAssets } from 'lib/cms';
 
 export async function getStaticProps() {
