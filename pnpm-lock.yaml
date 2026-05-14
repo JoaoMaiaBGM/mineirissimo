@@ -11,6 +11,9 @@ importers:
       '@datocms/cda-client':
         specifier: ^0.2.10
         version: 0.2.10
+      '@tailwindplus/elements':
+        specifier: ^1.0.22
+        version: 1.0.22
       '@types/bootstrap':
         specifier: ^5.2.6
         version: 5.2.10
@@ -601,6 +604,9 @@ packages:
 
   '@tailwindcss/postcss@4.2.2':
     resolution: {integrity: sha512-n4goKQbW8RVXIbNKRB/45LzyUqN451deQK0nzIeauVEqjlI49slUlgKYJM2QyUzap/PcpnS7kzSUmPb1sCRvYQ==}
+
+  '@tailwindplus/elements@1.0.22':
+    resolution: {integrity: sha512-rpUVblTefHInmbanTreDqxkjGYV+S44EOIJS1UtyvY1+tn5PbdOkUkWar8cjkEZpCDPAXbswtF0tuxEkX3jk0g==}
 
   '@tybys/wasm-util@0.10.1':
     resolution: {integrity: sha512-9tTaPJLSiejZKx+Bmog4uSubteqTvFrVrURwkmHixBo0G4seD0zUxp98E1DzUBJxLQ3NPwXrGKDiVjwx/DpPsg==}
@@ -2631,6 +2637,8 @@ snapshots:
       '@tailwindcss/oxide': 4.2.2
       postcss: 8.5.8
       tailwindcss: 4.2.2
+
+  '@tailwindplus/elements@1.0.22': {}
 
   '@tybys/wasm-util@0.10.1':
     dependencies:

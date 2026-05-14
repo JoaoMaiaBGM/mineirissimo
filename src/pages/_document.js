@@ -1,4 +1,5 @@
 import { Head, Html, Main, NextScript } from 'next/document';
+import Script from 'next/script';
 
 export default function Document() {
   return (
@@ -14,6 +15,11 @@ export default function Document() {
         />
       </Head>
       <body>
+        <Script
+          src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
+          strategy="beforeInteractive"
+          type="module"
+        />
         <Main />
         <NextScript />
       </body>

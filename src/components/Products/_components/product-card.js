@@ -1,6 +1,10 @@
 import Image from 'next/image';
 
+import { ModalNoMore } from './modal-no-more';
+
 export function ProductCard({ product }) {
+  const dialogId = `product-modal-${product.id}`;
+
   return (
     <div className="card flex flex-col items-center justify-center gap-6">
       <h4 className="h4 text-primary capitalize text-center">{product.title}</h4>
@@ -15,11 +19,10 @@ export function ProductCard({ product }) {
         />
       </div>
 
-      {/* <p className="p-small whitespace-pre-line text-center">{product.alt}</p> */}
-
-      <button className="btn-primary" onClick={() => console.log(product)}>
+      <button type="button" command="show-modal" commandfor={dialogId} className="btn-primary">
         Saiba mais
       </button>
+      <ModalNoMore dialogId={dialogId} product={product} />
     </div>
   );
 }
