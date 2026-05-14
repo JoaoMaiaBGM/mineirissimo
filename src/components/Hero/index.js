@@ -1,5 +1,6 @@
 import { usePublicAssets } from 'lib/cms/usePublicAssets';
 import Image from 'next/image';
+import Link from 'next/link';
 
 export function Hero() {
   const { data } = usePublicAssets();
@@ -26,7 +27,9 @@ export function Hero() {
           Desde 2010
         </p>
 
-        <button className="mt-4 btn-primary">Fazer Pedido Agora</button>
+        <Link href="https://wa.me/5581996272423" target="_blank">
+          <button className="mt-4 btn-primary">Fazer Pedido Agora</button>
+        </Link>
       </div>
     </section>
   );

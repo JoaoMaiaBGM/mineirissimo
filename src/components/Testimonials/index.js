@@ -1,4 +1,4 @@
-import { TestimonialsCards } from 'components/TestimonialsCards';
+import { TestimonialsCards } from 'components/Testimonials/_components/TestimonialsCards';
 
 export function Testimonials() {
   return (
