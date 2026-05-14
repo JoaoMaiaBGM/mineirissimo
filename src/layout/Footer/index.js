@@ -35,7 +35,7 @@ const socialLinks = [
 
 export function Footer() {
   return (
-    <footer className="section-p bg-primary text-center">
+    <footer className="section-p bg-primary-dark text-center">
       <div className="container pb-8 flex flex-col items-start justify-center gap-6 lg:gap-8 md:flex-row">
         <div className="flex flex-col items-start justify-center gap-2">
           <h4 className="h4 text-mine-white">Informações</h4>

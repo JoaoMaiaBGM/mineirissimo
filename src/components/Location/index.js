@@ -21,7 +21,7 @@ export function Location() {
   const facade = data?.storeFront;
 
   return (
-    <section className="section-p text-center" id="loja">
+    <section className="section-p bg-mine-gray-150 text-center" id="loja">
       <div className="container flex flex-col items-center justify-center">
         <SectionTitle title="Onde estamos" />
 

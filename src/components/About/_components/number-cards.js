@@ -40,7 +40,7 @@ export function NumberCards() {
   return cardContent.map((item) => (
     <div
       key={item.title}
-      className="min-h-40 w-full flex flex-row items-center justify-start gap-6 shadow-md rounded-lg bg-mine-gray-150 md:p-2"
+      className="min-h-40 w-full flex flex-row items-center justify-start gap-6 shadow-md rounded-lg bg-white md:p-2"
     >
       <div className="w-28 h-28 flex items-center justify-center lg:w-28 lg:h-28">
         <Image

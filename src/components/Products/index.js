@@ -7,9 +7,9 @@ export function Products() {
   const products = data?.products;
 
   return (
-    <div className="bg-mine-gray-150 section-p">
+    <div className="bg-primary-dark section-p">
       <section className="container flex flex-col items-center justify-center" id="produtos">
-        <SectionTitle title="Nossos Produtos" />
+        <SectionTitle title="Nossos Produtos" className="text-white" />
 
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {products?.map((product) => (
