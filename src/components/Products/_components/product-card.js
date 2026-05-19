@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { ModalNoMore } from './modal-no-more';
+import { ModalKnowMore } from './modal-know-more';
 
 export function ProductCard({ product }) {
   const dialogId = `product-modal-${product.id}`;
@@ -22,7 +22,7 @@ export function ProductCard({ product }) {
       <button type="button" command="show-modal" commandfor={dialogId} className="btn-primary">
         Saiba mais
       </button>
-      <ModalNoMore dialogId={dialogId} product={product} />
+      <ModalKnowMore dialogId={dialogId} product={product} />
     </div>
   );
 }

@@ -1,2 +1,2 @@
-export * from './modal-no-more';
+export * from './modal-know-more';
 export * from './product-card';
