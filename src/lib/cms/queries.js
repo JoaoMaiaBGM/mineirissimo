@@ -42,3 +42,35 @@ export const PUBLIC_ASSETS_QUERY = `
     }
   }
 `;
+
+export const PRODUCT_DETAIL_FIELDS = `
+  id
+  name
+  preparation
+  image {
+    url
+    alt
+  }
+  ingredients {
+    id
+    name
+    iconKey
+  }
+  nutritionalInformation
+`;
+
+export const ALL_PRODUCTS_QUERY = `
+  query AllProducts {
+    allProducts {
+      ${PRODUCT_DETAIL_FIELDS}
+    }
+  }
+`;
+
+export const GET_PRODUCT_QUERY = `
+  query GetProduct($id: ItemId!) {
+    product(filter: { id: { eq: $id } }) {
+      ${PRODUCT_DETAIL_FIELDS}
+    }
+  }
+`;

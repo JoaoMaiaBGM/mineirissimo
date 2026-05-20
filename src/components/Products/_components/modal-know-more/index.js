@@ -1,6 +1,5 @@
 import Image from 'next/image';
 import { MdClose } from 'react-icons/md';
-import { ingredients, nutritionalInformation } from '../../_data';
 import { Ingredients } from './ingredients';
 import { NutritionalInformation } from './nutritional-information';
 import { PreparationMode } from './preparation-mode';
@@ -36,7 +35,10 @@ export function KnowMoreModal({ dialogId, product }) {
                   <Divider />
                 </div>
 
-                <div id="product-image" className="w-full aspect-50/70 p-0.5 bg-white rounded-lg">
+                <div
+                  id="product-image"
+                  className="w-full h-48 aspect-2/1 p-0.5 bg-white rounded-lg md:aspect-50/70 md:h-full"
+                >
                   <Image
                     src={product.url}
                     alt={product.alt}
@@ -65,15 +67,17 @@ export function KnowMoreModal({ dialogId, product }) {
                   >
                     <p className="p-small text-mine-gray-150">{product.alt}</p>
 
-                    <Ingredients ingredients={ingredients} />
+                    <Ingredients ingredients={product.ingredients} />
 
                     <Divider />
 
-                    <NutritionalInformation nutritionalInformation={nutritionalInformation} />
+                    <NutritionalInformation
+                      nutritionalInformation={product.nutritionalInformation}
+                    />
 
                     <Divider />
 
-                    <PreparationMode />
+                    <PreparationMode preparation={product.preparation} />
                   </div>
                 </div>
 
