@@ -1,8 +1,16 @@
 import { cmsQuery } from './client';
+import {
+  findProductForCard,
+  getAllProducts,
+  mergeCardWithProductDetails,
+} from './product';
 import { PUBLIC_ASSETS_QUERY, STORE_FACADE_ASSET_ID } from './queries';
 
 export async function getPublicAssets({ preview = false } = {}) {
-  const data = await cmsQuery(PUBLIC_ASSETS_QUERY, { preview });
+  const [data, allProducts] = await Promise.all([
+    cmsQuery(PUBLIC_ASSETS_QUERY, { preview }),
+    getAllProducts({ preview }),
+  ]);
   const pub = data?.public ?? null;
 
   const products = (pub?.products ?? [])
@@ -12,12 +20,17 @@ export async function getPublicAssets({ preview = false } = {}) {
 
       const caption = typeof img.title === 'string' && img.title.trim() ? img.title.trim() : null;
 
-      return {
+      const cardProduct = {
         id: record.id,
         title: caption ?? record.title ?? 'Produto',
         url: img.src,
         alt: typeof img.alt === 'string' ? img.alt : '',
       };
+
+      const productRecord = findProductForCard(cardProduct, allProducts);
+      return productRecord
+        ? mergeCardWithProductDetails(cardProduct, productRecord)
+        : cardProduct;
     })
     .filter(Boolean);
 
