@@ -1,6 +1,6 @@
-import { Header } from "components/Header";
-import { Seo } from "components/Seo";
-import { _PrivacyPolicy } from "components/PrivacyPolicy";
+import { _PrivacyPolicy } from 'components/PrivacyPolicy';
+import { Seo } from 'components/Seo';
+import { Header } from 'layout/Header';
 
 export default function PrivacyPolicy() {
   return (
@@ -11,7 +11,7 @@ export default function PrivacyPolicy() {
         canonicalPath="/politicas_de_privacidade"
       />
       <main>
-        <Header dark={"active"} size={"large"} />
+        <Header dark={'active'} size={'large'} />
         <_PrivacyPolicy />
       </main>
     </>

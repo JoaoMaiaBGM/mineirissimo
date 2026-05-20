@@ -1,45 +1,26 @@
-import Image from "next/image";
-
-import { AnimatedElement } from "utils/animations";
-import ilustrationAbout from "../../assets/images/ilustration-about.png";
-
-import styles from "./about.module.scss";
+import { SectionTitle } from 'layout/SectionTitle';
+import { NumberCards, WhoWeAre } from './_components';
 
 export function About() {
   return (
-    <AnimatedElement element="section" className={styles.about} id="sobre">
-      <h4 className={styles.title}>Sobre nós</h4>
-      <h1 className={styles.headline}>
-        Entenda quem somos e por que existimos
-      </h1>
-      <AnimatedElement element={"div"} className={styles.container}>
-        <div className={styles.imageContainer}>
-          <Image
-            src={
-              ilustrationAbout
-            } /* Alterar essa imagem para outra (com a equipe em frente da fábrica, por exemplo) na posição vertical */
-            alt="Imagem de um sanduiche recheado com salame."
-            className={styles.image}
-          />
+    <section className="section-p bg-mine-gray-150" id="sobre">
+      <div className="container flex flex-col items-center justify-center">
+        <SectionTitle title="Sobre nós" />
+
+        <div className="w-full flex flex-col items-stretch justify-center gap-12 lg:flex-row">
+          <div className="w-full flex flex-col items-center justify-start text-left gap-4">
+            <h2 className="h2 text-primary text-center mb-6">
+              Entenda quem somos e porque existimos
+            </h2>
+            <WhoWeAre />
+          </div>
+
+          <div className="w-full flex flex-col items-center justify-between gap-4">
+            <h2 className="h2 text-primary text-center mb-6">Números que contam nossa história</h2>
+            <NumberCards />
+          </div>
         </div>
-        <div className={styles.content}>
-          <p className={styles.paragraph}>
-            Somos uma empresa artesanal de pão de queijo e temos uma variedade
-            de outros produtos feitos, todos, a partir da massa do pão de
-            queijo. Nossas receitas não utilizam nenhum ingrediente químico ou
-            produtos que realcem o sabor. E também, não utilizamos ovo em pó,
-            pois consideramos de fundamental importância o efeito que somente o
-            ovo in natura proporciona no resultado final. A cocção dos produtos
-            pré-assados é feita de forma lenta e gradativa, deixando-os assim,
-            macio por dentro e crocante por fora.
-            <br /> <br />
-            {""}
-            Existimos como uma alternativa para aqueles que estão saturados do
-            mercado de pão de queijo industrializado e que buscam um sabor
-            verdadeiro com uma receita caseira.
-          </p>
-        </div>
-      </AnimatedElement>
-    </AnimatedElement>
+      </div>
+    </section>
   );
 }

@@ -1,4 +1,6 @@
 /** @type {import('next').NextConfig} */
+const datoProjectId = process.env.NEXT_PUBLIC_DATOCMS_PROJECT_ID?.trim();
+
 const nextConfig = {
   trailingSlash: true,
   reactStrictMode: true,
@@ -10,7 +12,12 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'www.datocms-assets.com',
-        pathname: `/${process.env.NEXT_PUBLIC_DATOCMS_PROJECT_ID}/**`,
+        pathname: datoProjectId ? `/${datoProjectId}/**` : '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'datocms-assets.com',
+        pathname: datoProjectId ? `/${datoProjectId}/**` : '/**',
       },
     ],
   },

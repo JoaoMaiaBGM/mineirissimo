@@ -1,6 +1,6 @@
-import { Header } from "components/Header";
-import { Seo } from "components/Seo";
-import { _TermsAndConditions } from "components/TermsAndConditions";
+import { Seo } from 'components/Seo';
+import { _TermsAndConditions } from 'components/TermsAndConditions';
+import { Header } from 'layout/Header';
 
 export default function TermsAndConditions() {
   return (
@@ -11,7 +11,7 @@ export default function TermsAndConditions() {
         canonicalPath="/termos_e_condicoes"
       />
       <main>
-        <Header dark={"active"} size={"large"} />
+        <Header dark={'active'} size={'large'} />
         <_TermsAndConditions />
       </main>
     </>
