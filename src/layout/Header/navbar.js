@@ -1,23 +1,27 @@
 const navItems = [
   {
     label: 'Início',
-    href: '#',
+    href: '/',
   },
   {
     label: 'Produtos',
-    href: '#produtos',
+    href: '/#produtos',
   },
   {
     label: 'Sobre',
-    href: '#sobre',
+    href: '/#sobre',
   },
   {
     label: 'Depoimentos',
-    href: '#depoimentos',
+    href: '/#depoimentos',
   },
   {
     label: 'Loja',
-    href: '#loja',
+    href: '/#loja',
+  },
+  {
+    label: 'Contato',
+    href: '/contato',
   },
 ];
 

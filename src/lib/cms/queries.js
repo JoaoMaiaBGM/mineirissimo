@@ -39,6 +39,7 @@ export const PUBLIC_ASSETS_QUERY = `
       generalImages {
         ${GENERAL_IMAGE_FIELDS}
       }
+      contactHero { ${ASSET_FIELDS} }
     }
   }
 `;

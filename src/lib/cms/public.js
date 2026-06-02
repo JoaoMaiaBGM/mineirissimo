@@ -1,9 +1,5 @@
 import { cmsQuery } from './client';
-import {
-  findProductForCard,
-  getAllProducts,
-  mergeCardWithProductDetails,
-} from './product';
+import { findProductForCard, getAllProducts, mergeCardWithProductDetails } from './product';
 import { PUBLIC_ASSETS_QUERY, STORE_FACADE_ASSET_ID } from './queries';
 
 export async function getPublicAssets({ preview = false } = {}) {
@@ -28,9 +24,7 @@ export async function getPublicAssets({ preview = false } = {}) {
       };
 
       const productRecord = findProductForCard(cardProduct, allProducts);
-      return productRecord
-        ? mergeCardWithProductDetails(cardProduct, productRecord)
-        : cardProduct;
+      return productRecord ? mergeCardWithProductDetails(cardProduct, productRecord) : cardProduct;
     })
     .filter(Boolean);
 
@@ -54,5 +48,6 @@ export async function getPublicAssets({ preview = false } = {}) {
           height: storeFrontImage.height,
         }
       : null,
+    contactHero: pub?.contactHero ?? null,
   };
 }
