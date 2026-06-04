@@ -10,7 +10,7 @@ const INITIAL_FORM_STATE = {
   errors: [],
 };
 
-export default function ContactForm() {
+export default function ContactForm({ className }) {
   const formRef = useRef(null);
   const [state, formAction, isPending] = useActionState(sendContactForm, INITIAL_FORM_STATE);
   const stateErrors = state?.errors;
@@ -44,7 +44,7 @@ export default function ContactForm() {
     <form
       action={formAction}
       ref={formRef}
-      className="grid gap-3 md:grid-cols-[1fr_1.05fr] md:gap-2"
+      className={`grid gap-3 md:grid-cols-[1fr_1.15fr] md:gap-2 ${className || ''}`}
     >
       <div className="space-y-3 md:space-y-2">
         <div>
@@ -55,7 +55,7 @@ export default function ContactForm() {
             className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
           />
           {nameError && (
-            <p data-error className="pt-1 text-sm text-red-300">
+            <p data-error className="pt-1 text-sm text-red-300" maxLength={100}>
               {nameError}
             </p>
           )}
@@ -68,7 +68,7 @@ export default function ContactForm() {
             className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
           />
           {emailError && (
-            <p data-error className="pt-1 text-sm text-red-300">
+            <p data-error className="pt-1 text-sm text-red-300" maxLength={100}>
               {emailError}
             </p>
           )}
@@ -81,20 +81,21 @@ export default function ContactForm() {
             className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
           />
           {phoneError && (
-            <p data-error className="pt-1 text-sm text-red-300">
+            <p data-error className="pt-1 text-sm text-red-300" maxLength={15}>
               {phoneError}
             </p>
           )}
         </div>
       </div>
 
-      <div className="flex flex-col gap-3 md:gap-2">
-        <div>
+      <div className="flex min-h-0 flex-col md:col-start-2 md:row-start-1 md:h-full">
+        <div className="flex min-h-48 flex-1 flex-col md:min-h-0">
           <textarea
             name="message"
-            rows={6}
+            rows={4}
             placeholder="Digite sua mensagem aqui..."
-            className="min-h-[170px] w-full resize-none rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:min-h-[106px] md:py-2 md:text-base"
+            className="h-full min-h-48 w-full flex-1 resize-none rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:min-h-0 md:py-2 md:text-base"
+            maxLength={500}
           />
           {messageError && (
             <p data-error className="pt-1 text-sm text-red-300">
@@ -102,11 +103,10 @@ export default function ContactForm() {
             </p>
           )}
         </div>
-        <button
-          type="submit"
-          disabled={isPending}
-          className="mx-auto w-[160px] rounded-lg border border-white/80 bg-[#8d8d8d] px-6 py-3 text-3xl tracking-[0.12em] text-white transition-colors hover:bg-[#737373] md:ml-auto md:mr-0 md:w-[110px] md:rounded-md md:px-4 md:py-1.5 md:text-base md:tracking-normal"
-        >
+      </div>
+
+      <div className="flex flex-col items-center gap-3 md:col-start-2 md:row-start-2 md:items-center md:gap-2">
+        <button type="submit" disabled={isPending} className="btn-primary">
           {isPending ? 'Enviando...' : 'Enviar'}
         </button>
         {formError && (
