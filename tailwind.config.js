@@ -71,6 +71,7 @@ const config = {
           primaryGhost: '#ff6c4e',
           secondary: '#868ba7',
           secondaryDark: '#3d4657',
+          success: '#429946',
           blue: {
             50: '#BFE4FF',
             200: '#0C76E0',

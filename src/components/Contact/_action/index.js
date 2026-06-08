@@ -1,7 +1,5 @@
-'use server';
-
-import { sendContactEmail } from 'lib/contact/send-email';
 import { validateFields } from './_validations';
+import { sendContactEmail } from './send-email';
 
 const getFieldValue = (formData, field) => {
   const value = formData.get(field);

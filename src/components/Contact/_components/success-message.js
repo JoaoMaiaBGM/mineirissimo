@@ -3,7 +3,7 @@ import { GiCheckMark } from 'react-icons/gi';
 export function SuccessMessage() {
   return (
     <div className="mx-auto text-center">
-      <GiCheckMark className="mx-auto mb-10 size-24 rounded-full bg-brst-blue-200 p-4 text-white" />
+      <GiCheckMark className="mx-auto mb-5 size-24 rounded-full bg-mine-primary p-4 text-white" />
 
       <h2 className="p-large-bold whitespace-pre-line text-center">
         Obrigado pelo interesse em nos contatar!

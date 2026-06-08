@@ -1,21 +1,19 @@
 'use client';
 
-import { useActionState, useEffect, useMemo, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
-import { sendContactForm } from '../_action';
 import { SuccessMessage } from './success-message';
 
-const INITIAL_FORM_STATE = {
-  success: false,
-  errors: [],
+const FORM_ERROR = {
+  field: '_form',
+  message: 'Nao foi possivel enviar sua mensagem. Tente novamente em alguns minutos.',
 };
 
 export default function ContactForm({ className }) {
   const formRef = useRef(null);
-  const [state, formAction, isPending] = useActionState(sendContactForm, INITIAL_FORM_STATE);
-  const stateErrors = state?.errors;
-  const errors = useMemo(() => stateErrors ?? [], [stateErrors]);
-  const success = state?.success ?? false;
+  const [errors, setErrors] = useState([]);
+  const [success, setSuccess] = useState(false);
+  const [isPending, setIsPending] = useState(false);
 
   const getErrorByField = (field) => {
     return errors.find((error) => error.field === field)?.message;
@@ -30,6 +28,36 @@ export default function ContactForm({ className }) {
     }
   }, [errors]);
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsPending(true);
+    setErrors([]);
+
+    const formData = new FormData(event.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch('/api/contact/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSuccess(true);
+        return;
+      }
+
+      setErrors(result.errors ?? [FORM_ERROR]);
+    } catch {
+      setErrors([FORM_ERROR]);
+    } finally {
+      setIsPending(false);
+    }
+  };
+
   if (success) {
     return <SuccessMessage />;
   }
@@ -41,80 +69,96 @@ export default function ContactForm({ className }) {
   const formError = getErrorByField('_form');
 
   return (
-    <form
-      action={formAction}
-      ref={formRef}
-      className={`grid gap-3 md:grid-cols-[1fr_1.15fr] md:gap-2 ${className || ''}`}
-    >
-      <div className="space-y-3 md:space-y-2">
-        <div>
-          <input
-            type="text"
-            name="name"
-            placeholder="Nome"
-            className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
-          />
-          {nameError && (
-            <p data-error className="pt-1 text-sm text-red-300" maxLength={100}>
-              {nameError}
-            </p>
-          )}
-        </div>
-        <div>
-          <input
-            type="email"
-            name="email"
-            placeholder="Email"
-            className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
-          />
-          {emailError && (
-            <p data-error className="pt-1 text-sm text-red-300" maxLength={100}>
-              {emailError}
-            </p>
-          )}
-        </div>
-        <div>
-          <input
-            type="tel"
-            name="phone"
-            placeholder="Telefone"
-            className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
-          />
-          {phoneError && (
-            <p data-error className="pt-1 text-sm text-red-300" maxLength={15}>
-              {phoneError}
-            </p>
-          )}
-        </div>
-      </div>
-
-      <div className="flex min-h-0 flex-col md:col-start-2 md:row-start-1 md:h-full">
-        <div className="flex min-h-48 flex-1 flex-col md:min-h-0">
-          <textarea
-            name="message"
-            rows={4}
-            placeholder="Digite sua mensagem aqui..."
-            className="h-full min-h-48 w-full flex-1 resize-none rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:min-h-0 md:py-2 md:text-base"
-            maxLength={500}
-          />
-          {messageError && (
-            <p data-error className="pt-1 text-sm text-red-300">
-              {messageError}
-            </p>
-          )}
-        </div>
-      </div>
-
-      <div className="flex flex-col items-center gap-3 md:col-start-2 md:row-start-2 md:items-center md:gap-2">
-        <button type="submit" disabled={isPending} className="btn-primary">
-          {isPending ? 'Enviando...' : 'Enviar'}
-        </button>
-        {formError && (
-          <p data-error className="text-center text-sm text-red-300 md:text-right">
-            {formError}
+    <>
+      <div className="flex flex-col-reverse w-full gap-12 items-start justify-center text-justify lg:flex-row">
+        <div className="flex flex-col w-full lg:max-w-2/5">
+          <p className="p-medium mb-6">
+            Para dúvidas, elogios, reclamações, sugestões ou qualquer outro assunto, entre em
+            contato. Se preferir, pode ser por email ou por WhatsApp. Nosso horário de atendimento é
+            de segunda a sexta-feira das 9h às 17h.
           </p>
-        )}
+
+          <span className="p-medium mb-2">email: mineirissimoartesanal@gmail.com</span>
+          <span className="p-medium">WhatsApp: (81) 9.9627-2423</span>
+        </div>
+
+        <form
+          onSubmit={handleSubmit}
+          ref={formRef}
+          className={`grid gap-3 md:grid-cols-[1fr_1.15fr] md:gap-2 ${className || ''}`}
+        >
+          <div className="space-y-3 md:space-y-2">
+            <div>
+              <input
+                type="text"
+                name="name"
+                placeholder="Nome"
+                className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
+              />
+              {nameError && (
+                <p data-error className="pt-1 text-sm text-red-300" maxLength={100}>
+                  {nameError}
+                </p>
+              )}
+            </div>
+            <div>
+              <input
+                type="email"
+                name="email"
+                placeholder="Email"
+                className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
+              />
+              {emailError && (
+                <p data-error className="pt-1 text-sm text-red-300" maxLength={100}>
+                  {emailError}
+                </p>
+              )}
+            </div>
+            <div>
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Telefone"
+                className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
+              />
+              {phoneError && (
+                <p data-error className="pt-1 text-sm text-red-300" maxLength={15}>
+                  {phoneError}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="flex min-h-0 flex-col md:col-start-2 md:row-start-1 md:h-full">
+            <div className="flex min-h-48 flex-1 flex-col md:min-h-0">
+              <textarea
+                name="message"
+                rows={4}
+                placeholder="Digite sua mensagem aqui..."
+                className="h-full min-h-48 w-full flex-1 resize-none rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:min-h-0 md:py-2 md:text-base"
+                maxLength={500}
+              />
+              {messageError && (
+                <p data-error className="pt-1 text-sm text-red-300">
+                  {messageError}
+                </p>
+              )}
+            </div>
+          </div>
+
+          <div className="flex flex-col items-center gap-3 md:col-start-2 md:row-start-2 md:items-center md:gap-2">
+            <button type="submit" disabled={isPending} className="btn-primary">
+              {isPending ? 'Enviando...' : 'Enviar'}
+            </button>
+
+            {formError && (
+              <p data-error className="text-center text-sm text-red-300 md:text-right">
+                {formError}
+              </p>
+            )}
+          </div>
+        </form>
       </div>
-    </form>
+    </>
   );
 }
