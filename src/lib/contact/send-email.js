@@ -1,11 +1,9 @@
-'use server';
-
 import { Resend } from 'resend';
 
 const getConfig = () => {
   const apiKey = process.env.RESEND_API_KEY;
-  const toEmail = process.env.CONTACT_TO_EMAIL ?? 'vinil89.oficial@gmail.com';
-  const fromEmail = process.env.CONTACT_FROM_EMAIL ?? 'onboarding@resend.dev';
+  const toEmail = process.env.CONTACT_TO_EMAIL?.trim();
+  const fromEmail = process.env.CONTACT_FROM_EMAIL?.trim();
 
   if (!apiKey) {
     return {
@@ -25,7 +23,7 @@ const getConfig = () => {
 
 const buildMessage = (data) => {
   return `
-Novo contato pelo site Vinil89
+Novo contato pelo site Mineiríssimo
 
 Nome: ${data.name}
 Email: ${data.email}
@@ -36,7 +34,7 @@ ${data.message}
   `.trim();
 };
 
-export const saveContact = async (data) => {
+export const sendContactEmail = async (data) => {
   const config = getConfig();
   if (!config.success) {
     return config;
@@ -47,7 +45,7 @@ export const saveContact = async (data) => {
       from: config.fromEmail,
       to: config.toEmail,
       replyTo: data.email,
-      subject: `Novo contato do site - ${data.name}`,
+      subject: `Novo contato do site Mineiríssimo - ${data.name}`,
       text: buildMessage(data),
     });
 

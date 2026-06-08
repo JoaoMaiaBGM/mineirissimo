@@ -1,6 +1,6 @@
 'use server';
 
-import { saveContact } from './save';
+import { sendContactEmail } from 'lib/contact/send-email';
 import { validateFields } from './_validations';
 
 const getFieldValue = (formData, field) => {
@@ -24,7 +24,7 @@ export const sendContactForm = async (_, formData) => {
     };
   }
 
-  const result = await saveContact(data);
+  const result = await sendContactEmail(data);
   if (!result.success) {
     return {
       success: false,

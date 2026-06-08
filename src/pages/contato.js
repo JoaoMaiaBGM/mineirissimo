@@ -22,7 +22,7 @@ export default function ContactPage() {
 
         <section className="bg-mine-gray-150">
           <div className="relative w-full overflow-hidden">
-            <div className="relative w-full lg:min-h-[375px]">
+            <div className="relative w-full lg:min-h-[350px] 2xl:min-h-[500px]">
               {contactHero?.url ? (
                 <Image
                   src={contactHero.url}
