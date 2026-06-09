@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-
+import { formatPhoneMask } from 'utils/phone-mask';
 import { SuccessMessage } from './success-message';
 
 const FORM_ERROR = {
@@ -36,6 +36,7 @@ const inputsList = [
 export default function ContactForm({ className }) {
   const formRef = useRef(null);
   const [errors, setErrors] = useState([]);
+  const [phone, setPhone] = useState('');
   const [success, setSuccess] = useState(false);
   const [isPending, setIsPending] = useState(false);
 
@@ -117,6 +118,12 @@ export default function ContactForm({ className }) {
                   placeholder={input.placeholder}
                   className="w-full rounded-lg bg-mine-gray-100 px-3 py-2 p-small placeholder:text-mine-gray-300 focus:outline-none"
                   maxLength={input.length}
+                  {...(input.type === 'tel'
+                    ? {
+                        value: phone,
+                        onChange: (event) => setPhone(formatPhoneMask(event.target.value)),
+                      }
+                    : {})}
                 />
                 {getErrorByField(input.name) && (
                   <p data-error className="py-1 p-caption text-mine-error">
