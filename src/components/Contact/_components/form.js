@@ -9,6 +9,30 @@ const FORM_ERROR = {
   message: 'Nao foi possivel enviar sua mensagem. Tente novamente em alguns minutos.',
 };
 
+const inputsList = [
+  {
+    label: 'Nome',
+    name: 'name',
+    type: 'text',
+    placeholder: 'Nome',
+    length: 50,
+  },
+  {
+    label: 'Email',
+    name: 'email',
+    type: 'email',
+    placeholder: 'Email',
+    length: 100,
+  },
+  {
+    label: 'Telefone',
+    name: 'phone',
+    type: 'tel',
+    placeholder: 'Telefone',
+    length: 15,
+  },
+];
+
 export default function ContactForm({ className }) {
   const formRef = useRef(null);
   const [errors, setErrors] = useState([]);
@@ -62,9 +86,6 @@ export default function ContactForm({ className }) {
     return <SuccessMessage />;
   }
 
-  const nameError = getErrorByField('name');
-  const emailError = getErrorByField('email');
-  const phoneError = getErrorByField('phone');
   const messageError = getErrorByField('message');
   const formError = getErrorByField('_form');
 
@@ -85,48 +106,25 @@ export default function ContactForm({ className }) {
         <form
           onSubmit={handleSubmit}
           ref={formRef}
-          className={`grid gap-3 md:grid-cols-[1fr_1.15fr] md:gap-2 ${className || ''}`}
+          className={`grid gap-3 md:grid-cols-[1fr_1.15fr] ${className || ''}`}
         >
           <div className="space-y-3 md:space-y-2">
-            <div>
-              <input
-                type="text"
-                name="name"
-                placeholder="Nome"
-                className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
-              />
-              {nameError && (
-                <p data-error className="pt-1 text-sm text-red-300" maxLength={100}>
-                  {nameError}
-                </p>
-              )}
-            </div>
-            <div>
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
-              />
-              {emailError && (
-                <p data-error className="pt-1 text-sm text-red-300" maxLength={100}>
-                  {emailError}
-                </p>
-              )}
-            </div>
-            <div>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="Telefone"
-                className="w-full rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:py-2 md:text-base"
-              />
-              {phoneError && (
-                <p data-error className="pt-1 text-sm text-red-300" maxLength={15}>
-                  {phoneError}
-                </p>
-              )}
-            </div>
+            {inputsList.map((input) => (
+              <div key={input.name}>
+                <input
+                  type={input.type}
+                  name={input.name}
+                  placeholder={input.placeholder}
+                  className="w-full rounded-lg bg-mine-gray-100 px-3 py-2 p-small placeholder:text-mine-gray-300 focus:outline-none"
+                  maxLength={input.length}
+                />
+                {getErrorByField(input.name) && (
+                  <p data-error className="py-1 p-caption text-mine-error">
+                    {getErrorByField(input.name)}
+                  </p>
+                )}
+              </div>
+            ))}
           </div>
 
           <div className="flex min-h-0 flex-col md:col-start-2 md:row-start-1 md:h-full">
@@ -135,11 +133,11 @@ export default function ContactForm({ className }) {
                 name="message"
                 rows={4}
                 placeholder="Digite sua mensagem aqui..."
-                className="h-full min-h-48 w-full flex-1 resize-none rounded-md border border-white/40 bg-[#e6e6e6] px-4 py-3 text-xl text-black placeholder:text-black/75 focus:outline-none md:min-h-0 md:py-2 md:text-base"
+                className="h-full min-h-48 w-full flex-1 resize-none rounded-lg bg-mine-gray-100 px-3 py-2 p-small placeholder:text-mine-gray-300 focus:outline-none md:min-h-0"
                 maxLength={500}
               />
               {messageError && (
-                <p data-error className="pt-1 text-sm text-red-300">
+                <p data-error className="pt-1 p-caption text-mine-error">
                   {messageError}
                 </p>
               )}
@@ -152,7 +150,7 @@ export default function ContactForm({ className }) {
             </button>
 
             {formError && (
-              <p data-error className="text-center text-sm text-red-300 md:text-right">
+              <p data-error className="text-center p-caption text-mine-error md:text-right">
                 {formError}
               </p>
             )}

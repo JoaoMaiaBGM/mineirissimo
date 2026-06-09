@@ -72,13 +72,14 @@ const config = {
           secondary: '#868ba7',
           secondaryDark: '#3d4657',
           success: '#429946',
+          error: '#ff0000',
           blue: {
             50: '#BFE4FF',
             200: '#0C76E0',
             300: '#22262a',
           },
           gray: {
-            100: '#fffaf0',
+            100: '#e6e6e6',
             150: '#ededed',
             200: '#adb5bd',
             250: '#868e96',

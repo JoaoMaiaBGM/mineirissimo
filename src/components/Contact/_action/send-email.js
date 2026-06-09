@@ -1,5 +1,7 @@
 import { Resend } from 'resend';
 
+import { EmailTemplate } from '../_components/email-template';
+
 const getConfig = () => {
   const apiKey = process.env.RESEND_API_KEY;
   const toEmail = process.env.CONTACT_TO_EMAIL?.trim();
@@ -21,19 +23,6 @@ const getConfig = () => {
   };
 };
 
-const buildMessage = (data) => {
-  return `
-Novo contato pelo site Mineiríssimo
-
-Nome: ${data.name}
-Email: ${data.email}
-Telefone: ${data.phone}
-
-Mensagem:
-${data.message}
-  `.trim();
-};
-
 export const sendContactEmail = async (data) => {
   const config = getConfig();
   if (!config.success) {
@@ -46,7 +35,12 @@ export const sendContactEmail = async (data) => {
       to: config.toEmail,
       replyTo: data.email,
       subject: `Novo contato do site Mineiríssimo - ${data.name}`,
-      text: buildMessage(data),
+      react: EmailTemplate({
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        message: data.message,
+      }),
     });
 
     if (error) {
