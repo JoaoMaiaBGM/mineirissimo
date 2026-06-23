@@ -14,6 +14,7 @@ export function SectionTitle({ className, title }) {
         className="w-full h-14 object-cover"
         width={2000}
         height={2000}
+        loading="eager"
       />
     </div>
   );

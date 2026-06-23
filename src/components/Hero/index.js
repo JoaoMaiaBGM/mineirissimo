@@ -15,6 +15,7 @@ export function Hero() {
           width={1600}
           height={900}
           priority
+          loading="eager"
           className="relative w-full h-full object-cover"
         />
       ) : null}

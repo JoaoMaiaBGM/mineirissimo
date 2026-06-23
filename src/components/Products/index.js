@@ -11,7 +11,7 @@ export function Products() {
       <section className="container flex flex-col items-center justify-center" id="produtos">
         <SectionTitle title="Nossos Produtos" className="text-white" />
 
-        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid w-full min-w-0 grid-cols-1 items-stretch gap-4 md:grid-cols-2 lg:grid-cols-3">
           {products?.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
