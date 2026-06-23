@@ -75,3 +75,20 @@ export const GET_PRODUCT_QUERY = `
     }
   }
 `;
+
+export const LEGAL_RECORD_FIELDS = `
+  id
+  title
+  slug
+  content {
+    value
+  }
+`;
+
+export const GET_LEGAL_BY_SLUG_QUERY = `
+  query GetLegalBySlug($slug: String!) {
+    legal(filter: { slug: { eq: $slug } }) {
+      ${LEGAL_RECORD_FIELDS}
+    }
+  }
+`;
