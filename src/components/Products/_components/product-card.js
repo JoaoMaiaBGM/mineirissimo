@@ -6,22 +6,25 @@ export function ProductCard({ product }) {
   const dialogId = `product-modal-${product.id}`;
 
   return (
-    <div className="card flex flex-col items-center justify-center gap-6">
-      <h4 className="h4 text-primary capitalize text-center">{product.title}</h4>
+    <div className="h-full w-full min-w-0">
+      <div className="card flex h-full w-full flex-col items-center justify-between gap-6">
+        <h4 className="h4 text-primary capitalize text-center">{product.title}</h4>
 
-      <div className="max-w-fit max-h-52 aspect-4/3">
-        <Image
-          src={product.url}
-          className="w-full h-full object-cover rounded-xl"
-          width={200}
-          height={200}
-          alt={`Imagem de ${product.title}`}
-        />
+        <div className="aspect-4/3 w-full max-h-52 overflow-hidden rounded-xl">
+          <Image
+            src={product.url}
+            className="h-full w-full object-cover"
+            width={200}
+            height={200}
+            alt={`Imagem de ${product.title}`}
+          />
+        </div>
+
+        <button type="button" command="show-modal" commandfor={dialogId} className="btn-primary">
+          Saiba mais
+        </button>
       </div>
 
-      <button type="button" command="show-modal" commandfor={dialogId} className="btn-primary">
-        Saiba mais
-      </button>
       <KnowMoreModal dialogId={dialogId} product={product} />
     </div>
   );

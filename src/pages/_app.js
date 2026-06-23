@@ -1,4 +1,3 @@
-import "bootstrap/scss/bootstrap-grid.scss";
 import "styles/site.css";
 import "styles/globals/_typography.scss";
 import "styles/globals.scss";

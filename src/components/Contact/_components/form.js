@@ -92,8 +92,8 @@ export default function ContactForm({ className }) {
 
   return (
     <>
-      <div className="flex flex-col-reverse w-full gap-12 items-start justify-center text-justify lg:flex-row">
-        <div className="flex flex-col w-full lg:max-w-2/5">
+      <div className="flex w-full flex-col-reverse items-start justify-center gap-12 text-justify lg:flex-row lg:items-start">
+        <div className="w-full flex flex-col shrink-0 lg:w-2/5">
           <p className="p-medium mb-6">
             Para dúvidas, elogios, reclamações, sugestões ou qualquer outro assunto, entre em
             contato. Se preferir, pode ser por email ou por WhatsApp. Nosso horário de atendimento é
@@ -107,7 +107,7 @@ export default function ContactForm({ className }) {
         <form
           onSubmit={handleSubmit}
           ref={formRef}
-          className={`grid gap-3 md:grid-cols-[1fr_1.15fr] ${className || ''}`}
+          className={`mx-auto grid w-full min-w-0 max-w-md gap-3 md:max-w-none md:grid-cols-[1fr_1.15fr] lg:flex-1 ${className || ''}`}
         >
           <div className="space-y-3 md:space-y-2">
             {inputsList.map((input) => (
@@ -134,25 +134,21 @@ export default function ContactForm({ className }) {
             ))}
           </div>
 
-          <div className="flex min-h-0 flex-col md:col-start-2 md:row-start-1 md:h-full">
-            <div className="flex min-h-48 flex-1 flex-col md:min-h-0">
-              <textarea
-                name="message"
-                rows={4}
-                placeholder="Digite sua mensagem aqui..."
-                className="h-full min-h-48 w-full flex-1 resize-none rounded-lg bg-mine-gray-100 px-3 py-2 p-small placeholder:text-mine-gray-300 focus:outline-none md:min-h-0"
-                maxLength={500}
-              />
-              {messageError && (
-                <p data-error className="pt-1 p-caption text-mine-error">
-                  {messageError}
-                </p>
-              )}
-            </div>
-          </div>
+          <div className="flex flex-col gap-3 md:col-start-2 md:row-start-1 md:gap-2">
+            <textarea
+              name="message"
+              rows={6}
+              placeholder="Digite sua mensagem aqui..."
+              className="min-h-40 w-full resize-none rounded-lg bg-mine-gray-100 px-3 py-2 p-small placeholder:text-mine-gray-300 focus:outline-none md:min-h-44 lg:min-h-48"
+              maxLength={500}
+            />
+            {messageError && (
+              <p data-error className="p-caption text-mine-error">
+                {messageError}
+              </p>
+            )}
 
-          <div className="flex flex-col items-center gap-3 md:col-start-2 md:row-start-2 md:items-center md:gap-2">
-            <button type="submit" disabled={isPending} className="btn-primary">
+            <button type="submit" disabled={isPending} className="btn-primary self-center">
               {isPending ? 'Enviando...' : 'Enviar'}
             </button>
 

@@ -22,7 +22,7 @@ export default function ContactPage() {
 
         <section className="bg-mine-gray-150">
           <div className="relative w-full overflow-hidden">
-            <div className="relative w-full lg:min-h-[350px] 2xl:min-h-[500px]">
+            <div className="relative aspect-21/9 min-h-[200px] w-full md:min-h-[280px] lg:min-h-[350px] 2xl:min-h-[500px]">
               {contactHero?.url ? (
                 <Image
                   src={contactHero.url}
@@ -34,6 +34,7 @@ export default function ContactPage() {
                   priority
                   sizes="(max-width: 768px) 100vw, 960px"
                   className="object-cover object-center"
+                  loading="eager"
                 />
               ) : null}
             </div>
