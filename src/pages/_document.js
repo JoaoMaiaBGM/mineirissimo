@@ -17,7 +17,7 @@ export default function Document() {
       <body>
         <Script
           src="https://cdn.jsdelivr.net/npm/@tailwindplus/elements@1"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           type="module"
         />
         <Main />

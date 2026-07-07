@@ -1,6 +1,10 @@
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
-import { KnowMoreModal } from './modal-know-more';
+const KnowMoreModal = dynamic(
+  () => import('./modal-know-more').then((mod) => mod.KnowMoreModal),
+  { ssr: false }
+);
 
 export function ProductCard({ product }) {
   const dialogId = `product-modal-${product.id}`;
