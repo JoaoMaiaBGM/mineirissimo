@@ -107,7 +107,7 @@ export function mergeCardWithProductDetails(cardProduct, productRecord) {
 
   return {
     ...cardProduct,
-    title: cardProduct.title ?? details.name,
+    title: details.name || cardProduct.title,
     url: details.image?.url ?? cardProduct.url,
     alt: details.image?.alt || cardProduct.alt,
     preparation: details.preparation,

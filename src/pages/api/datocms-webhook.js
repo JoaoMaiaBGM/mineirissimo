@@ -1,4 +1,8 @@
-import { getPathsToRevalidate, verifyDatoCmsWebhookSecret } from 'lib/cms/revalidation';
+import {
+  describeWebhookPayload,
+  getPathsToRevalidate,
+  verifyDatoCmsWebhookSecret,
+} from 'lib/cms/revalidation';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -7,16 +11,22 @@ export default async function handler(req, res) {
   }
 
   if (!verifyDatoCmsWebhookSecret(req)) {
+    console.warn('[api/datocms-webhook] Unauthorized request');
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
+  const summary = describeWebhookPayload(req.body);
+  console.log('[api/datocms-webhook] Received', summary);
+
   try {
     const paths = getPathsToRevalidate(req.body);
+    console.log('[api/datocms-webhook] Paths to revalidate', paths);
 
     if (!paths.length) {
       return res.status(200).json({
         revalidated: false,
         message: 'No paths matched this webhook payload',
+        ...summary,
       });
     }
 
@@ -41,6 +51,7 @@ export default async function handler(req, res) {
     return res.status(failed.length && !revalidated.length ? 500 : 200).json({
       revalidated: revalidated.length > 0,
       paths: revalidated,
+      ...summary,
       ...(failed.length ? { failed } : {}),
     });
   } catch (err) {
