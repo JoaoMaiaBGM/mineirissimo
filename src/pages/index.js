@@ -7,24 +7,30 @@ import { Testimonials } from 'components/Testimonials';
 import { Footer } from 'layout/Footer';
 import { Header } from 'layout/Header';
 import { getPublicAssets } from 'lib/cms';
+import { CMS_ISR_REVALIDATE_SECONDS } from 'lib/cms/revalidation';
 
 export async function getStaticProps() {
   let ogImage = null;
+  let products = [];
+
   try {
-    ({ ogImage } = await getPublicAssets());
+    const assets = await getPublicAssets();
+    ogImage = assets.ogImage ?? null;
+    products = assets.products ?? [];
   } catch (error) {
-    console.log(`Images Error: ${error}`);
+    console.log(`Public assets error: ${error}`);
   }
 
   return {
     props: {
-      ogImage: ogImage ?? null,
+      ogImage,
+      products,
     },
-    revalidate: 60,
+    revalidate: CMS_ISR_REVALIDATE_SECONDS,
   };
 }
 
-export default function Home({ ogImage }) {
+export default function Home({ ogImage, products }) {
   return (
     <>
       <Seo
@@ -36,7 +42,7 @@ export default function Home({ ogImage }) {
       <Header />
       <main>
         <Hero />
-        <Products />
+        <Products products={products} />
         <About />
         <Testimonials />
         <Location />
