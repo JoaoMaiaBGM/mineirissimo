@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import Logo from '../../assets/icons/logo.png';
-import { Navbar } from './navbar';
+import { MobileNavbar } from './navbar';
 
 export function MobileHeader({ isMenuOpen, onOpenMenu, onCloseMenu }) {
   const menuOverlay = (
@@ -30,7 +30,7 @@ export function MobileHeader({ isMenuOpen, onOpenMenu, onCloseMenu }) {
           <span className="block translate-y-[-2px]">&times;</span>
         </button>
 
-        <Navbar isMobile={true} onNavigate={onCloseMenu} />
+        <MobileNavbar onNavigate={onCloseMenu} />
       </div>
     </div>
   );

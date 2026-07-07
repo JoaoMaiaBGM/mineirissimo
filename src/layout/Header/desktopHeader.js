@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Logo from '../../assets/icons/logo.png';
-import { Navbar } from './navbar';
+import { DesktopNavbar } from './navbar';
 
 export function DesktopHeader() {
   return (
@@ -20,7 +20,7 @@ export function DesktopHeader() {
           />
         </a>
 
-        <Navbar />
+        <DesktopNavbar />
 
         <a
           href="https://web.whatsapp.com/send?phone=5581996272423"
