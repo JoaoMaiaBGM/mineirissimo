@@ -51,3 +51,8 @@ export async function getPublicAssets({ preview = false } = {}) {
     contactHero: pub?.contactHero ?? null,
   };
 }
+
+export async function getProducts({ preview = false } = {}) {
+  const { products } = await getPublicAssets({ preview });
+  return products;
+}
