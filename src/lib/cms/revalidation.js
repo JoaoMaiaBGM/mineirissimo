@@ -34,14 +34,25 @@ function getItemTypeApiKey(payload) {
   if (!Array.isArray(related)) return null;
 
   const itemType = related.find((entity) => entity?.type === 'item_type');
-  return itemType?.attributes?.api_key ?? null;
+  if (itemType?.attributes?.api_key) return itemType.attributes.api_key;
+
+  const itemTypeId = payload?.entity?.relationships?.item_type?.data?.id;
+  if (!itemTypeId) return null;
+
+  const matched = related.find((entity) => entity?.type === 'item_type' && entity?.id === itemTypeId);
+  return matched?.attributes?.api_key ?? null;
+}
+
+function shouldRevalidatePublishedRecord(payload) {
+  const status = payload?.entity?.meta?.status;
+  return status === 'published' || status === 'updated';
 }
 
 /**
  * Resolves which static pages should be revalidated from a DatoCMS webhook payload.
  *
  * Supports:
- * - Item publish/unpublish/delete events (entity_type: "item")
+ * - Item publish/unpublish/delete/update events (entity_type: "item")
  * - CDA cache tag invalidation (entity_type: "cda_cache_tags")
  */
 export function getPathsToRevalidate(payload) {
@@ -53,16 +64,47 @@ export function getPathsToRevalidate(payload) {
 
   if (payload.entity_type !== 'item') return [];
 
+  const { event_type: eventType } = payload;
   const apiKey = getItemTypeApiKey(payload);
-  if (!apiKey) return [];
+
+  if (!apiKey) {
+    if (eventType === 'publish' || eventType === 'unpublish' || eventType === 'delete') {
+      return [CMS_PATHS.home];
+    }
+    return [];
+  }
 
   if (apiKey === 'legal') {
     const slug = payload.entity?.attributes?.slug;
     const path = LEGAL_SLUG_PATHS[slug];
-    return path ? [path] : ITEM_TYPE_PATHS.legal;
+    return uniquePaths(path ? [path] : ITEM_TYPE_PATHS.legal);
   }
 
-  return ITEM_TYPE_PATHS[apiKey] ?? [];
+  const paths = ITEM_TYPE_PATHS[apiKey];
+  if (paths) {
+    if (eventType === 'update' && !shouldRevalidatePublishedRecord(payload)) {
+      return [];
+    }
+    return uniquePaths(paths);
+  }
+
+  if (eventType === 'publish' || eventType === 'unpublish' || eventType === 'delete') {
+    return [CMS_PATHS.home];
+  }
+
+  return [];
+}
+
+export function describeWebhookPayload(payload) {
+  return {
+    event_type: payload?.event_type ?? null,
+    entity_type: payload?.entity_type ?? null,
+    item_type_api_key: getItemTypeApiKey(payload),
+    entity_id: payload?.entity?.id ?? null,
+    entity_status: payload?.entity?.meta?.status ?? null,
+    environment: payload?.environment ?? null,
+    is_environment_primary: payload?.is_environment_primary ?? null,
+  };
 }
 
 export function verifyDatoCmsWebhookSecret(req) {
