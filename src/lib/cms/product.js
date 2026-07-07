@@ -84,7 +84,21 @@ export function findProductForCard(cardProduct, allProducts) {
   const cardTitle = normalizeLabel(cardProduct.title);
   if (!cardTitle) return null;
 
-  return allProducts.find((product) => normalizeLabel(product.name) === cardTitle) ?? null;
+  const exact = allProducts.find((product) => normalizeLabel(product.name) === cardTitle);
+  if (exact) return exact;
+
+  const partialMatches = allProducts.filter((product) => {
+    const name = normalizeLabel(product.name);
+    return name.startsWith(cardTitle) || name.startsWith(`${cardTitle} `);
+  });
+
+  if (partialMatches.length === 1) return partialMatches[0];
+
+  if (partialMatches.length > 1) {
+    return partialMatches.sort((a, b) => a.name.length - b.name.length)[0];
+  }
+
+  return null;
 }
 
 export function mergeCardWithProductDetails(cardProduct, productRecord) {
