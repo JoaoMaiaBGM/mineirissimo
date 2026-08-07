@@ -12,12 +12,14 @@ function normalizeLabel(value) {
 
 function isIgnoredProduct(productName) {
   const normalized = normalizeLabel(productName);
-  return normalized.includes('romeu') || normalized.includes('pizzas');
+  return (
+    normalized.includes('romeu') || normalized.includes('pizzas') || normalized.includes('fibras')
+  );
 }
 
 function isIgnoredNutritionalItem(item) {
   const iconKey = normalizeLabel(item.iconKey);
-  return iconKey === 'sugar' || iconKey === 'tomato';
+  return iconKey === 'sugar' || iconKey === 'tomato' || iconKey === 'fibers';
 }
 
 function filterNutritionalInformationForProduct(items, productName) {

@@ -3,14 +3,14 @@
 import { FaBottleWater, FaBowlRice } from 'react-icons/fa6';
 import { GiChickenOven, GiSpring, GiTomato, GiWheat } from 'react-icons/gi';
 import { LiaCheeseSolid, LiaCubeSolid } from 'react-icons/lia';
-import { LuMilk, LuWheat, LuMilkOff } from 'react-icons/lu';
+import { LuMilk, LuMilkOff, LuWheat } from 'react-icons/lu';
 import {
   MdGrain,
   MdOutlineEgg,
   MdOutlineLocalFireDepartment,
   MdOutlineWaterDrop,
 } from 'react-icons/md';
-import { PiChartPieSliceLight } from 'react-icons/pi';
+import { PiChartPieSliceLight, PiGrains } from 'react-icons/pi';
 import { TbSalt, TbSausage } from 'react-icons/tb';
 
 const iconClass = 'size-4 text-white';
@@ -37,4 +37,5 @@ export const nutritionalIconMap = {
   carbs: <LuWheat className={iconClass} />,
   sodium: <LiaCubeSolid className={iconClass} />,
   sugar: <MdGrain className={iconClass} />,
+  fibers: <PiGrains className={iconClass} />,
 };
