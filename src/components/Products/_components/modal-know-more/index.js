@@ -42,8 +42,8 @@ export function KnowMoreModal({ dialogId, product }) {
                   <Image
                     src={product.url}
                     alt={product.alt}
-                    width={500}
-                    height={500}
+                    width={1200}
+                    height={1200}
                     className="w-full h-full object-cover rounded-lg"
                     loading="eager"
                   />

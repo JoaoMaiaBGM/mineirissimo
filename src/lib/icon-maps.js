@@ -1,9 +1,9 @@
 'use client';
 
 import { FaBottleWater, FaBowlRice } from 'react-icons/fa6';
-import { GiChickenOven, GiSpring, GiTomato } from 'react-icons/gi';
+import { GiChickenOven, GiSpring, GiTomato, GiWheat } from 'react-icons/gi';
 import { LiaCheeseSolid, LiaCubeSolid } from 'react-icons/lia';
-import { LuMilk, LuWheat } from 'react-icons/lu';
+import { LuMilk, LuWheat, LuMilkOff } from 'react-icons/lu';
 import {
   MdGrain,
   MdOutlineEgg,
@@ -16,9 +16,11 @@ import { TbSalt, TbSausage } from 'react-icons/tb';
 const iconClass = 'size-4 text-white';
 
 export const ingredientIconMap = {
+  amaranth: <GiWheat className={iconClass} />,
   cheese: <LiaCheeseSolid className={iconClass} />,
   starch: <FaBowlRice className={iconClass} />,
   milk: <LuMilk className={iconClass} />,
+  zero_lactose_milk: <LuMilkOff className={iconClass} />,
   eggs: <MdOutlineEgg className={iconClass} />,
   oil: <FaBottleWater className={iconClass} />,
   salt: <TbSalt className={iconClass} />,

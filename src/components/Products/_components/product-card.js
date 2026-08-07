@@ -1,10 +1,9 @@
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 
-const KnowMoreModal = dynamic(
-  () => import('./modal-know-more').then((mod) => mod.KnowMoreModal),
-  { ssr: false }
-);
+const KnowMoreModal = dynamic(() => import('./modal-know-more').then((mod) => mod.KnowMoreModal), {
+  ssr: false,
+});
 
 export function ProductCard({ product }) {
   const dialogId = `product-modal-${product.id}`;
@@ -18,8 +17,8 @@ export function ProductCard({ product }) {
           <Image
             src={product.url}
             className="h-full w-full object-cover"
-            width={200}
-            height={200}
+            width={1200}
+            height={1200}
             alt={`Imagem de ${product.title}`}
           />
         </div>
