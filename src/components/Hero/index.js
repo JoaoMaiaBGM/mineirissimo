@@ -1,6 +1,7 @@
 import { usePublicAssets } from 'lib/cms/usePublicAssets';
 import Image from 'next/image';
 import Link from 'next/link';
+import { MdWhatsapp } from 'react-icons/md';
 
 export function Hero() {
   const { data } = usePublicAssets();
@@ -29,7 +30,10 @@ export function Hero() {
         </p>
 
         <Link href="https://wa.me/5581996272423" target="_blank">
-          <button className="mt-4 btn-primary">Fazer Pedido Agora</button>
+          <button className="mt-4 btn-primary flex items-center justify-center gap-2 md:px-3 md:py-2 lg:px-6 lg:py-3">
+            <MdWhatsapp className="size-6" />
+            Peça no WhatsApp
+          </button>
         </Link>
       </div>
     </section>

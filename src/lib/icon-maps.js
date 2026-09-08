@@ -13,7 +13,7 @@ import {
 import { PiChartPieSliceLight, PiGrains } from 'react-icons/pi';
 import { TbSalt, TbSausage } from 'react-icons/tb';
 
-const iconClass = 'size-4 text-white';
+const iconClass = 'size-4 text-mine-yellow-50';
 
 export const ingredientIconMap = {
   amaranth: <GiWheat className={iconClass} />,
