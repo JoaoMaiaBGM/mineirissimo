@@ -5,7 +5,7 @@ import {
   absoluteAssetUrl,
   absolutePageUrl,
   resolveOgImageUrl,
-} from "lib/site";
+} from "@/lib/site";
 
 /**
  * @param {string} [imagePath] — URL absoluta ou path (ex. `/og-image.png`). Só use para override explícito.

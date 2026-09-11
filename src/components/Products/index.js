@@ -1,4 +1,4 @@
-import { SectionTitle } from 'layout/SectionTitle';
+import { SectionTitle } from '@/layout/SectionTitle';
 import { ProductCard } from './_components/product-card';
 
 export function Products({ products = [] }) {

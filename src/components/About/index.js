@@ -1,4 +1,4 @@
-import { SectionTitle } from 'layout/SectionTitle';
+import { SectionTitle } from '@/layout/SectionTitle';
 import { NumberCards, WhoWeAre } from './_components';
 
 export function About() {

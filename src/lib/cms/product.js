@@ -1,6 +1,6 @@
 import { cmsQuery } from './client';
 import { ALL_PRODUCTS_QUERY, GET_PRODUCT_QUERY } from './queries';
-import { normalizeLabel } from '../../utils/normalize-label';
+import { normalizeLabel } from '@/utils/normalize-label.js';
 
 function isIgnoredProduct(productName) {
   const normalized = normalizeLabel(productName);

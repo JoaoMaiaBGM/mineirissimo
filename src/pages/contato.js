@@ -1,9 +1,9 @@
-import ContactForm from 'components/Contact/_components';
-import { Seo } from 'components/Seo';
-import { Footer } from 'layout/Footer';
-import { Header } from 'layout/Header';
-import { SectionTitle } from 'layout/SectionTitle';
-import { usePublicAssets } from 'lib/cms/usePublicAssets';
+import ContactForm from '@/components/Contact/_components';
+import { Seo } from '@/components/Seo';
+import { Footer } from '@/layout/Footer';
+import { Header } from '@/layout/Header';
+import { SectionTitle } from '@/layout/SectionTitle';
+import { usePublicAssets } from '@/lib/cms/usePublicAssets';
 import Image from 'next/image';
 
 export default function ContactPage() {

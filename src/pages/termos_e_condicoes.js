@@ -1,7 +1,7 @@
-import { Seo } from 'components/Seo';
-import { _TermsAndConditions } from 'components/TermsAndConditions';
-import { Header } from 'layout/Header';
-import { getTermsAndConditions } from 'lib/cms';
+import { Seo } from '@/components/Seo';
+import { _TermsAndConditions } from '@/components/TermsAndConditions';
+import { Header } from '@/layout/Header';
+import { getTermsAndConditions } from '@/lib/cms';
 
 export async function getStaticProps() {
   let termsAndConditions = null;

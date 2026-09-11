@@ -1,6 +1,6 @@
 'use client';
 
-import { ingredientIconMap } from 'lib/icon-maps';
+import { ingredientIconMap } from '@/lib/icon-maps';
 
 export function Ingredients({ ingredients = [] }) {
   if (!ingredients.length) return null;

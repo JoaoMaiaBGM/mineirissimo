@@ -1,4 +1,4 @@
-import { usePublicAssets } from 'lib/cms/usePublicAssets';
+import { usePublicAssets } from '@/lib/cms/usePublicAssets';
 import Image from 'next/image';
 import Link from 'next/link';
 import { MdWhatsapp } from 'react-icons/md';

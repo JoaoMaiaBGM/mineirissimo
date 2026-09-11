@@ -1,6 +1,6 @@
 'use client';
 
-import { nutritionalIconMap } from 'lib/icon-maps';
+import { nutritionalIconMap } from '@/lib/icon-maps';
 
 export function NutritionalInformation({ nutritionalInformation = [] }) {
   if (!nutritionalInformation.length) return null;

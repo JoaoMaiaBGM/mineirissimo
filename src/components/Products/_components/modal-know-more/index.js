@@ -3,7 +3,7 @@ import { MdClose, MdWhatsapp } from 'react-icons/md';
 import { Ingredients } from './ingredients';
 import { NutritionalInformation } from './nutritional-information';
 import { PreparationMode } from './preparation-mode';
-import { priceFormat } from '../../../../utils/price-format';
+import { priceFormat } from '@/utils/price-format';
 
 const Divider = () => {
   return <div className="w-full h-px bg-accent"></div>;

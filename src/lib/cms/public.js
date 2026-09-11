@@ -25,7 +25,6 @@ export async function getPublicAssets({ preview = false } = {}) {
       };
 
       const productRecord = findProductForCard(cardProduct, allProducts);
-      console.log(productRecord);
       return productRecord ? mergeCardWithProductDetails(cardProduct, productRecord) : cardProduct;
     })
     .filter(Boolean);

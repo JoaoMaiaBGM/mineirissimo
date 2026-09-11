@@ -2,7 +2,7 @@ import {
   describeWebhookPayload,
   getPathsToRevalidate,
   verifyDatoCmsWebhookSecret,
-} from 'lib/cms/revalidation';
+} from '@/lib/cms/revalidation';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {

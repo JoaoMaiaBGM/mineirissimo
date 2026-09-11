@@ -3,7 +3,7 @@ import { FaChevronLeft, FaChevronRight, FaQuoteLeft } from 'react-icons/fa';
 import { A11y, Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { testimonialsData } from 'database/testimonials';
+import { testimonialsData } from '@/database/testimonials';
 
 import 'swiper/css';
 import 'swiper/css/pagination';
