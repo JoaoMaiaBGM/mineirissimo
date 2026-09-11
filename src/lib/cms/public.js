@@ -18,12 +18,14 @@ export async function getPublicAssets({ preview = false } = {}) {
 
       const cardProduct = {
         id: record.id,
+        price: record.price ?? '0,00',
         title: caption ?? record.title ?? 'Produto',
         url: img.src,
         alt: typeof img.alt === 'string' ? img.alt : '',
       };
 
       const productRecord = findProductForCard(cardProduct, allProducts);
+      console.log(productRecord);
       return productRecord ? mergeCardWithProductDetails(cardProduct, productRecord) : cardProduct;
     })
     .filter(Boolean);

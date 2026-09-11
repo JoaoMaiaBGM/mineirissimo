@@ -3,6 +3,7 @@ import { MdClose, MdWhatsapp } from 'react-icons/md';
 import { Ingredients } from './ingredients';
 import { NutritionalInformation } from './nutritional-information';
 import { PreparationMode } from './preparation-mode';
+import { priceFormat } from '../../../../utils/price-format';
 
 const Divider = () => {
   return <div className="w-full h-px bg-accent"></div>;
@@ -95,7 +96,7 @@ export function KnowMoreModal({ dialogId, product }) {
                 <div className="flex items-center justify-between w-full">
                   <p className="p-medium text-mine-yellow-100 text-left w-full">A partir de</p>
                   <p className="p-medium text-mine-yellow-50 font-bold text-right w-full">
-                    R$29,60
+                    {priceFormat(product.price)}
                   </p>
                 </div>
 

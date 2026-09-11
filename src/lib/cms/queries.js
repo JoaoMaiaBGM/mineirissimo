@@ -47,6 +47,7 @@ export const PUBLIC_ASSETS_QUERY = `
 export const PRODUCT_DETAIL_FIELDS = `
   id
   name
+  price
   preparation
   image {
     url
