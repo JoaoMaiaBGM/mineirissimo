@@ -18,6 +18,7 @@ export async function getPublicAssets({ preview = false } = {}) {
 
       const cardProduct = {
         id: record.id,
+        price: record.price ?? '0,00',
         title: caption ?? record.title ?? 'Produto',
         url: img.src,
         alt: typeof img.alt === 'string' ? img.alt : '',

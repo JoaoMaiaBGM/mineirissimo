@@ -1,4 +1,4 @@
-import { sendContactForm } from 'components/Contact/_action';
+import { sendContactForm } from '@/components/Contact/_action';
 
 export default async function handler(req, res) {
   if (req.method !== 'POST') {

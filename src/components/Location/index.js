@@ -1,8 +1,8 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { SectionTitle } from 'layout/SectionTitle';
-import { usePublicAssets } from 'lib/cms/usePublicAssets';
+import { SectionTitle } from '@/layout/SectionTitle';
+import { usePublicAssets } from '@/lib/cms/usePublicAssets';
 import { FiClock, FiMapPin } from 'react-icons/fi';
 import Logo from '../../assets/icons/logo.png';
 

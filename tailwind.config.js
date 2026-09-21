@@ -72,7 +72,12 @@ const config = {
           secondary: '#868ba7',
           secondaryDark: '#3d4657',
           success: '#429946',
+          whatsapp: '#25D366',
           error: '#ff0000',
+          yellow: {
+            50: '#f0dfc0',
+            100: '#d9b98a',
+          },
           blue: {
             50: '#BFE4FF',
             200: '#0C76E0',

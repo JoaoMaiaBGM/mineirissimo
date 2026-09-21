@@ -1,7 +1,7 @@
-import { _PrivacyPolicy } from 'components/PrivacyPolicy';
-import { Seo } from 'components/Seo';
-import { Header } from 'layout/Header';
-import { getPrivacyPolicy } from 'lib/cms';
+import { _PrivacyPolicy } from '@/components/PrivacyPolicy';
+import { Seo } from '@/components/Seo';
+import { Header } from '@/layout/Header';
+import { getPrivacyPolicy } from '@/lib/cms';
 
 export async function getStaticProps() {
   let privacyPolicy = null;

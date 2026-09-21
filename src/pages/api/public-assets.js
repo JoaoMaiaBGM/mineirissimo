@@ -1,4 +1,4 @@
-import { getPublicAssets } from 'lib/cms';
+import { getPublicAssets } from '@/lib/cms';
 
 export default async function handler(req, res) {
   if (req.method !== 'GET') {

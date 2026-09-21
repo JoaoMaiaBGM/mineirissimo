@@ -1,14 +1,6 @@
 import { cmsQuery } from './client';
 import { ALL_PRODUCTS_QUERY, GET_PRODUCT_QUERY } from './queries';
-
-function normalizeLabel(value) {
-  if (typeof value !== 'string') return '';
-  return value
-    .toLowerCase()
-    .normalize('NFD')
-    .replace(/\p{Diacritic}/gu, '')
-    .trim();
-}
+import { normalizeLabel } from '@/utils/normalize-label.js';
 
 function isIgnoredProduct(productName) {
   const normalized = normalizeLabel(productName);
@@ -56,6 +48,7 @@ export function mapProductRecord(record) {
   return {
     id: record.id,
     name: record.name ?? '',
+    price: record.price ?? '',
     preparation: record.preparation ?? '',
     image: record.image?.url
       ? {
@@ -110,6 +103,7 @@ export function mergeCardWithProductDetails(cardProduct, productRecord) {
   return {
     ...cardProduct,
     title: details.name || cardProduct.title,
+    price: details.price ?? cardProduct.price,
     url: details.image?.url ?? cardProduct.url,
     alt: details.image?.alt || cardProduct.alt,
     preparation: details.preparation,

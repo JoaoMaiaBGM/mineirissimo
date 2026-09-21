@@ -1,7 +1,7 @@
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
-import { formatPhoneMask } from 'utils/phone-mask';
+import { formatPhoneMask } from '@/utils/phone-mask';
 import { SuccessMessage } from './success-message';
 
 const FORM_ERROR = {

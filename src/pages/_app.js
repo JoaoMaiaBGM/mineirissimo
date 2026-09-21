@@ -1,6 +1,6 @@
-import "styles/site.css";
-import "styles/globals/_typography.scss";
-import "styles/globals.scss";
+import "@/styles/site.css";
+import "@/styles/globals/_typography.scss";
+import "@/styles/globals.scss";
 
 export default function App({ Component, pageProps }) {
   return <Component {...pageProps} />;

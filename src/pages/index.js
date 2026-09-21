@@ -1,13 +1,13 @@
-import { About } from 'components/About';
-import { Hero } from 'components/Hero';
-import { Location } from 'components/Location';
-import { Products } from 'components/Products';
-import { Seo } from 'components/Seo';
-import { Testimonials } from 'components/Testimonials';
-import { Footer } from 'layout/Footer';
-import { Header } from 'layout/Header';
-import { getPublicAssets } from 'lib/cms';
-import { CMS_ISR_REVALIDATE_SECONDS } from 'lib/cms/revalidation';
+import { About } from '@/components/About';
+import { Hero } from '@/components/Hero';
+import { Location } from '@/components/Location';
+import { Products } from '@/components/Products';
+import { Seo } from '@/components/Seo';
+import { Testimonials } from '@/components/Testimonials';
+import { Footer } from '@/layout/Footer';
+import { Header } from '@/layout/Header';
+import { getPublicAssets } from '@/lib/cms';
+import { CMS_ISR_REVALIDATE_SECONDS } from '@/lib/cms/revalidation';
 
 export async function getStaticProps() {
   let ogImage = null;

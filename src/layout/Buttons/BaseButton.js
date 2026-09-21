@@ -1,5 +1,5 @@
 import styles from "./buttons.module.scss";
-import capitalize from "utils/capitalize";
+import capitalize from "@/utils/capitalize";
 
 export function BaseButton({ children, className, Icon, size = "medium" }) {
   const sizeClass = `button${capitalize(size)}`;
