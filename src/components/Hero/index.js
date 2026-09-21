@@ -32,7 +32,7 @@ export function Hero() {
         <Link href="https://wa.me/5581996272423" target="_blank">
           <button className="mt-4 btn-primary flex items-center justify-center gap-2 md:px-3 md:py-2 lg:px-6 lg:py-3">
             <MdWhatsapp className="size-6" />
-            Peça no WhatsApp
+            Peça pelo WhatsApp
           </button>
         </Link>
       </div>

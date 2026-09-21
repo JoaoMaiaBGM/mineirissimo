@@ -80,7 +80,7 @@ export function DesktopNavbar() {
           key={item.href}
           href={item.href}
           onClick={(event) => handleAnchorNavigate(event, item.href)}
-          className="text-primary-foreground hover:text-secondary"
+          className="text-primary-foreground hover:text-secondary p-small md:p-large"
         >
           {item.label}
         </Link>
