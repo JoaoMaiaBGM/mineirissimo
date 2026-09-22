@@ -1,9 +1,9 @@
 export const testimonialsData = [
   {
     id: 1,
-    name: 'Carolina da Fonte',
+    name: 'Marcelo',
     message:
-      'O melhor pão de queijo que comi na vida, sem falar na coxinha, maravilhosa, o lanche do fim de semana sempre tem Mineiríssimo.',
+      'O melhor pão de queijo que comi na vida, sem falar na coxinha, excelente, o lanche do fim de semana sempre tem Mineiríssimo.',
   },
   {
     id: 2,
@@ -13,14 +13,14 @@ export const testimonialsData = [
   },
   {
     id: 3,
-    name: 'Doralice',
-    message: 'Excelência! Tudo delícia!',
+    name: 'Emanuelle Pontes',
+    message: 'Sem dúvida são os melhores pães de queijo da cidade!!! Toda minha família adora!!',
   },
   {
     id: 4,
     name: 'Carlos Henrique',
     message:
-      'Sou de Brasília e sempre que vou a Recife trago produtos da Mineiríssimo comigo. A qualidade é constante: embalagens práticas, produto sempre fresco e sabor fiel à tradição. O cuidado no preparo transmite confiança e mostra respeito ao consumidor, como se fosse um pão de queijo feito em casa, mas com toda a praticidade do congelado.',
+      'Sou de Brasília e sempre que vou a Recife trago produtos da Mineiríssimo comigo. A qualidade é constante, embalagens práticas, produto sempre fresco e sabor fiel à tradição.',
   },
   {
     id: 5,
@@ -38,7 +38,7 @@ export const testimonialsData = [
     id: 7,
     name: 'Tania Elizabeth',
     message:
-      'Moro em Brasilia, em uma visita a Recife tive o prazer de saborear essas delícias do MINEIRÍSSIMO, tão bom que trouxe alguns congelados para Brasilia. Parabéns aos proprietários e a equipe da mão na massa.',
+      'Moro em Brasilia, em uma visita a Recife tive o prazer de saborear essas delícias do MINEIRÍSSIMO. Parabéns aos proprietários e a equipe da mão na massa.',
   },
   {
     id: 8,
@@ -48,6 +48,7 @@ export const testimonialsData = [
   {
     id: 9,
     name: 'Ana Luiza',
-    message: 'Delícia demais!! Supera em mt os outros. Vale a pena.',
+    message:
+      'O melhor pão de queijo que já comi na vida. Derrete na boca… Sem falar que não tem glúten',
   },
 ];
