@@ -13,26 +13,41 @@ export const testimonialsData = [
   },
   {
     id: 3,
-    name: 'Sol Guimarães',
-    message:
-      'A coxinha de pão de queijo é uma invenção genial! E a pizza de pão de queijo? Uma verdadeira surpresa de sabores deliciosos!',
+    name: 'Doralice',
+    message: 'Excelência! Tudo delícia!',
   },
   {
     id: 4,
-    name: 'Ana Luiza',
+    name: 'Carlos Henrique',
     message:
-      'O pão de queijo do reino é a combinação perfeita de tradição e sabor. Sem falar na crostata, que é irresistível! Recomendo muito!',
+      'Sou de Brasília e sempre que vou a Recife trago produtos da Mineiríssimo comigo. A qualidade é constante: embalagens práticas, produto sempre fresco e sabor fiel à tradição. O cuidado no preparo transmite confiança e mostra respeito ao consumidor, como se fosse um pão de queijo feito em casa, mas com toda a praticidade do congelado.',
   },
   {
     id: 5,
+    name: 'Fernanda',
+    message:
+      'O Mineirissimo é único! O que fazem com a base do pão de queijo é incrível! Difícil de escolher um favorito! Sou fã!!',
+  },
+  {
+    id: 6,
     name: 'Lorena Maia',
     message:
       'Sou do Rio, mas sempre que vou a Recife tenho que passar aqui pra repor meu estoque! Levo no avião e consigo aproveitar um bom tempo esse gostinho!!!',
   },
   {
-    id: 6,
-    name: 'Luis da Fonte',
+    id: 7,
+    name: 'Tania Elizabeth',
     message:
-      'Pão de queijo mineiro excelente. Variedade no cardápio e opções de pizza de pão de queijo e crostata de pão de queijo.',
+      'Moro em Brasilia, em uma visita a Recife tive o prazer de saborear essas delícias do MINEIRÍSSIMO, tão bom que trouxe alguns congelados para Brasilia. Parabéns aos proprietários e a equipe da mão na massa.',
+  },
+  {
+    id: 8,
+    name: 'Leonardo Vasconcelos',
+    message: 'Melhor pão de queijo de Recife... Sabor excepcional e ótimas opções...',
+  },
+  {
+    id: 9,
+    name: 'Ana Luiza',
+    message: 'Delícia demais!! Supera em mt os outros. Vale a pena.',
   },
 ];
