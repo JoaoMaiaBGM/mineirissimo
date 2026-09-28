@@ -1,4 +1,4 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Landing page for Mineiríssimo, a traditional brazilian cheese bread and artisanal food business. Technologies used in this project: Next, Tailwind and DatoCMS.
 
 ## Getting Started
 
